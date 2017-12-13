@@ -1,0 +1,60 @@
+#Ignore everything under root
+*
+!.gitignore
+#Except for these specific folders for BillingCenter
+!BillingCenter
+BillingCenter/*
+!BillingCenter/modules
+BillingCenter/modules/*
+!BillingCenter/modules/configuration/
+!BillingCenter/modules/configuration/**
+!BillingCenter/resources
+!BillingCenter/resources/**
+
+#Except for these specific folders for ClaimCenter
+!ClaimCenter
+ClaimCenter/*
+!ClaimCenter/modules
+ClaimCenter/modules/*
+!ClaimCenter/modules/configuration/
+!ClaimCenter/modules/configuration/**
+!ClaimCenter/resources
+!ClaimCenter/resources/**
+
+#Except for these specific folders for ContactManager
+!ContactManager
+ContactManager/*
+!ContactManager/modules
+ContactManager/modules/*
+!ContactManager/modules/configuration/
+!ContactManager/modules/configuration/**
+!ContactManager/resources
+!ContactManager/resources/**
+
+#Except for these specific folders for PolicyCenter
+!PolicyCenter
+PolicyCenter/*
+!PolicyCenter/modules
+PolicyCenter/modules/*
+!PolicyCenter/modules/configuration/
+!PolicyCenter/modules/configuration/**
+!PolicyCenter/resources
+!PolicyCenter/resources/**
+#Except for these specific folders for Portal
+
+!Portal
+!Portal/*
+!Portal/WebServiceClient/**
+!Portal/Apache/**
+!Portal/API/**
+!Portal/APIImpl/**
+!Portal/Authentication/**
+!Portal/ldap/**
+!Portal/sso/**
+!Portal/Tomcat_JNDI_Context_Files/**
+!Portal/WebStripes/**
+**/target/**
+!*/
+*.bak
+/Portal/WebServiceClient/target/
+/Portal/WebStripes/target/

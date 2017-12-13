@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="transaction">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="login_id" type="xs:string" />
+                <xs:element name="password" type="xs:string" />
+                <xs:element name="customer_id" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="autocomplete" type="xs:integer" minOccurs="0" maxOccurs="1" />
+                <xs:element name="name_on_account" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="local_reference" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="address_1" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="address_2" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="city_province" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="state" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="country" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="zip" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="email" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="phone" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="amount_paid" type="xs:decimal" />
+                <xs:element name="extra01" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="extra02" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="extra03" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="extra04" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="extra05" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="max_future_date" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="initiate_payment_date" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="trans_date" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="processed_trans_id" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="payment_type" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="online_fee" type="xs:decimal" minOccurs="0" maxOccurs="1" />
+                <xs:element name="last_four_acct" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="token" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="failed_date" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="failed_reason" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="pending_trans_id" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="cancelled" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="cancelled_date" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="cancelled_notes" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="authcode" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="success_url" type="xs:string" />
+                <xs:element name="failure_url" type="xs:string" />
+                <xs:element name="cancel_url" type="xs:string" />
+                <xs:element name="allowed_pay_types" type="xs:string" />
+                <xs:element ref="items" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="items">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="item"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="item">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="title" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="quantity" type="xs:integer" minOccurs="0" maxOccurs="1" />
+                <xs:element name="cost" type="xs:decimal" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

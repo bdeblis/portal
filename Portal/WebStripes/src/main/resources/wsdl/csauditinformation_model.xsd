@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://guidewire.com/pc/gx/compsource.pc.api.payrollreport.gx.csauditinformation_model" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gw="http://guidewire.com/xsd" xmlns="http://guidewire.com/pc/gx/compsource.pc.api.payrollreport.gx.csauditinformation_model">
+  <xsd:element name="CSAuditInformation" type="CSAuditInformation" nillable="true"/>
+  <xsd:complexType name="CSAuditInformation">
+    <xsd:sequence>
+      <xsd:element name="DisplayableAuditInfo" minOccurs="0" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ActualInfo" minOccurs="0" nillable="true">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="IsComplete" minOccurs="0" nillable="true" type="xsd:boolean" gw:type="java.lang.Boolean"/>
+                  <xsd:element name="IsEditable" minOccurs="0" nillable="true" type="xsd:boolean" gw:type="java.lang.Boolean"/>
+                  <xsd:element name="IsFinalAudit" minOccurs="0" nillable="true" type="xsd:boolean" gw:type="java.lang.Boolean"/>
+                  <xsd:element name="IsOpen" minOccurs="0" nillable="true" type="xsd:boolean" gw:type="java.lang.Boolean"/>
+                  <xsd:element name="IsPremiumReport" minOccurs="0" nillable="true" type="xsd:boolean" gw:type="java.lang.Boolean"/>
+                  <xsd:element name="IsScheduled" minOccurs="0" nillable="true" type="xsd:boolean" gw:type="java.lang.Boolean"/>
+                  <xsd:element name="PolicyTerm" minOccurs="0" nillable="true">
+                    <xsd:complexType>
+                      <xsd:sequence>
+                        <xsd:element name="DisplayName" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                        <xsd:element name="Policy" minOccurs="0" nillable="true">
+                          <xsd:complexType>
+                            <xsd:sequence>
+                              <xsd:element name="LatestPeriod" minOccurs="0" nillable="true">
+                                <xsd:complexType>
+                                  <xsd:sequence>
+                                    <xsd:element name="DisplayPolicyNumber" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                                  </xsd:sequence>
+                                </xsd:complexType>
+                              </xsd:element>
+                            </xsd:sequence>
+                          </xsd:complexType>
+                        </xsd:element>
+                      </xsd:sequence>
+                    </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="PublicID" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="CloseDate" minOccurs="0" nillable="true" type="xsd:dateTime" gw:type="java.util.Date"/>
+            <xsd:element name="DueDate" minOccurs="0" nillable="true" type="xsd:dateTime" gw:type="java.util.Date"/>
+            <xsd:element name="EndDate" minOccurs="0" nillable="true" type="xsd:dateTime" gw:type="java.util.Date"/>
+            <xsd:element name="InitDate" minOccurs="0" nillable="true" type="xsd:dateTime" gw:type="java.util.Date"/>
+            <xsd:element name="Method" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+            <xsd:element name="StartDate" minOccurs="0" nillable="true" type="xsd:dateTime" gw:type="java.util.Date"/>
+            <xsd:element name="Status" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+            <xsd:element name="TotalCost" minOccurs="0" nillable="true" type="xsd:decimal" gw:type="java.math.BigDecimal"/>
+            <xsd:element name="TransactionAmount" minOccurs="0" nillable="true" type="xsd:decimal" gw:type="java.math.BigDecimal"/>
+            <xsd:element name="Type" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://guidewire.com/pc/gx/compsource.pc.api.payrollreport.gx.csupdatecoveredemployeeresponse_model" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gw="http://guidewire.com/xsd" xmlns="http://guidewire.com/pc/gx/compsource.pc.api.payrollreport.gx.csupdatecoveredemployeeresponse_model">
+  <xsd:element name="CSUpdateCoveredEmployeeResponse" type="CSUpdateCoveredEmployeeResponse" nillable="true"/>
+  <xsd:complexType name="CSUpdateCoveredEmployeeResponse">
+    <xsd:sequence>
+      <xsd:element name="CalculatedPremium" minOccurs="0" nillable="true" type="xsd:decimal" gw:type="java.math.BigDecimal"/>
+      <xsd:element name="PublicId" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

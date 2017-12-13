@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<xsd:schema
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:gw="http://guidewire.com/xsd"
+      xmlns="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.contact.claimcontactrolemodel"
+      targetNamespace="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.contact.claimcontactrolemodel"
+      elementFormDefault="qualified">
+  <xsd:element
+        name="ClaimContactRole" type="ClaimContactRole" nillable="true"/>
+  <xsd:complexType
+        name="ClaimContactRole">
+    <xsd:sequence>
+      <xsd:element name="Role" minOccurs="0" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

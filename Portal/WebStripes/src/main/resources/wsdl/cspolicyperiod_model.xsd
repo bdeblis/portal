@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://guidewire.com/pc/gx/compsource.pc.api.payrollreport.gx.cspolicyperiod_model" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gw="http://guidewire.com/xsd" xmlns="http://guidewire.com/pc/gx/compsource.pc.api.payrollreport.gx.cspolicyperiod_model">
+  <xsd:element name="CSPolicyPeriod" type="CSPolicyPeriod" nillable="true"/>
+  <xsd:complexType name="CSPolicyPeriod">
+    <xsd:sequence>
+      <xsd:element name="EmployerAddressLine1" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+      <xsd:element name="EmployerCity" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+      <xsd:element name="EmployerState" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+      <xsd:element name="EmployerZip" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+      <xsd:element name="EmpName" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+      <xsd:element name="EmpPhone" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+      <xsd:element name="PolicyPeriod" minOccurs="0" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Policy" minOccurs="0" nillable="true">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="Account" minOccurs="0" nillable="true">
+                    <xsd:complexType>
+                      <xsd:sequence>
+                        <xsd:element name="AccountStatus" minOccurs="0" nillable="true">
+                          <xsd:complexType>
+                            <xsd:sequence>
+                              <xsd:element name="Code" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                              <xsd:element name="Description" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                            </xsd:sequence>
+                          </xsd:complexType>
+                        </xsd:element>
+                      </xsd:sequence>
+                    </xsd:complexType>
+                  </xsd:element>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="PolicyNumber" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

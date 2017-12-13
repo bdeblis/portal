@@ -1,0 +1,22 @@
+version: 1
+
+dn: cn=generic cashier genericcashier,ou=users,o=compsourceok,dc=com
+objectClass: organizationalPerson
+objectClass: csoExtension
+objectClass: person
+objectClass: csoPerson
+objectClass: inetOrgPerson
+objectClass: csoCashier
+objectClass: top
+cn: generic cashier genericcashier
+sn: cashier
+csoChallengeAnswer: cashier
+csoChallengeQuestion: what's your role?
+csoOkGovUserId: null
+givenname: generic
+homePhone: 555-555-5555
+mail: ron_k@compsourceok.com
+uid: genericcashier
+userPassword:: e1NTSEF9ZGJTMWdnZDhzcFN5RkRRaW1HL0FHNlZna2tHd0YyVkNuVE0vMXc9P
+ Q==
+

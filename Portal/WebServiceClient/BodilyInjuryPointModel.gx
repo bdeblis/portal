@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<xsd:schema
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:gw="http://guidewire.com/xsd"
+      xmlns="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.incident.bodilyinjurypointmodel"
+      targetNamespace="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.incident.bodilyinjurypointmodel"
+      elementFormDefault="qualified">
+  <xsd:element
+        name="BodilyInjuryPoint_EXT" type="BodilyInjuryPoint_EXT" nillable="true"/>
+  <xsd:complexType
+        name="BodilyInjuryPoint_EXT">
+    <xsd:sequence>
+      <xsd:element name="bodilyInjuryComment" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+      <xsd:element name="Compensable" minOccurs="0" nillable="true" type="xsd:boolean" gw:type="java.lang.Boolean"/>
+      <xsd:element name="injuryPoint" minOccurs="0" nillable="true" type="xsd:string"/>
+      <xsd:element name="injurySeverity" minOccurs="0" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

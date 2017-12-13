@@ -1,0 +1,22 @@
+version: 1
+
+dn: cn=connie miller conniemiller,ou=users,o=compsourceok,dc=com
+objectClass: organizationalPerson
+objectClass: csoExtension
+objectClass: person
+objectClass: csoPerson
+objectClass: inetOrgPerson
+objectClass: csoCashier
+objectClass: top
+cn: Connie Miller conniemiller
+sn: cashier
+csoChallengeAnswer: cashier
+csoChallengeQuestion: what's your role?
+csoOkGovUserId: null
+givenname: connie
+homePhone: 555-555-5555
+mail: connie_m@compsourceok.com
+uid: conniemiller
+userPassword:: e1NTSEF9ZGJTMWdnZDhzcFN5RkRRaW1HL0FHNlZna2tHd0YyVkNuVE0vMXc9P
+ Q==
+

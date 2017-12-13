@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+<xsd:schema
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:gw="http://guidewire.com/xsd"
+      xmlns="http://guidewire.com/pc/gx/compsource.pc.api.payrollreport.gx.csauditinformationdetails_model"
+      targetNamespace="http://guidewire.com/pc/gx/compsource.pc.api.payrollreport.gx.csauditinformationdetails_model"
+      elementFormDefault="qualified">
+  <xsd:element
+        name="CSAuditInformationDetails" type="CSAuditInformationDetails" nillable="true"/>
+  <xsd:complexType
+        name="CSAuditInformationDetails">
+    <xsd:sequence>
+      <xsd:element name="CoveredEmployees" minOccurs="0" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Entry" minOccurs="0" nillable="true" maxOccurs="unbounded">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="BasisForRating" minOccurs="0" nillable="true" type="xsd:int" gw:type="java.lang.Integer"/>
+                  <xsd:element name="CoveredEmployee" minOccurs="0" nillable="true">
+                    <xsd:complexType>
+                      <xsd:sequence>
+                        <xsd:element name="AuditedAmount" minOccurs="0" nillable="true" type="xsd:int" gw:type="java.lang.Integer"/>
+                        <xsd:element name="BasisType" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                        <xsd:element name="ClassCode" minOccurs="0" nillable="true">
+                          <xsd:complexType>
+                            <xsd:sequence>
+                              <xsd:element name="Code" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                              <xsd:element name="DescInd" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                              <xsd:element name="ShortDesc" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                            </xsd:sequence>
+                          </xsd:complexType>
+                        </xsd:element>
+                        <xsd:element name="FixedId" minOccurs="0" nillable="true">
+                          <xsd:complexType>
+                            <xsd:sequence>
+                              <xsd:element name="ObjValue" minOccurs="0" nillable="true" type="xsd:long" gw:type="java.lang.Long"/>
+                            </xsd:sequence>
+                          </xsd:complexType>
+                        </xsd:element>
+                        <xsd:element name="Location" minOccurs="0" nillable="true">
+                          <xsd:complexType>
+                            <xsd:sequence>
+                              <xsd:element name="AddressLine1" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                              <xsd:element name="AddressLine2" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                              <xsd:element name="AddressLine3" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                              <xsd:element name="City" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                              <xsd:element name="DisplayName" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                              <xsd:element name="LocationNum" minOccurs="0" nillable="true" type="xsd:int" gw:type="java.lang.Integer"/>
+                              <xsd:element name="PostalCode" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                              <xsd:element name="PrimaryLoc" minOccurs="0" nillable="true" type="xsd:boolean" gw:type="java.lang.Boolean"/>
+                              <xsd:element name="State" minOccurs="0" nillable="true">
+                                <xsd:complexType>
+                                  <xsd:sequence>
+                                    <xsd:element name="Code" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                                    <xsd:element name="Description" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                                  </xsd:sequence>
+                                </xsd:complexType>
+                              </xsd:element>
+                            </xsd:sequence>
+                          </xsd:complexType>
+                        </xsd:element>
+                      </xsd:sequence>
+                    </xsd:complexType>
+                  </xsd:element>
+                </xsd:sequence>
+                <xsd:attribute name="action" type="xsd:string" gw:type="gw.xml.xsd.ArrayAction"/>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="IncludedOwnerOfficers" minOccurs="0" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Entry" minOccurs="0" nillable="true" maxOccurs="unbounded">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="IncludedOwnerOfficer" minOccurs="0" nillable="true">
+                    <xsd:complexType>
+                      <xsd:sequence>
+                        <xsd:element name="AccountContactRole" minOccurs="0" nillable="true">
+                          <xsd:complexType>
+                            <xsd:sequence>
+                              <xsd:element name="AccountContact" minOccurs="0" nillable="true">
+                                <xsd:complexType>
+                                  <xsd:sequence>
+                                    <xsd:element name="Contact" minOccurs="0" nillable="true">
+                                      <xsd:complexType>
+                                        <xsd:sequence>
+                                          <xsd:element name="DisplayName" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                    </xsd:element>
+                                  </xsd:sequence>
+                                </xsd:complexType>
+                              </xsd:element>
+                            </xsd:sequence>
+                          </xsd:complexType>
+                        </xsd:element>
+                        <xsd:element name="ItemRelationshipTitle" minOccurs="0" nillable="true">
+                          <xsd:complexType>
+                            <xsd:sequence>
+                              <xsd:element name="DisplayName" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                            </xsd:sequence>
+                          </xsd:complexType>
+                        </xsd:element>
+                        <xsd:element name="Jurisdiction" minOccurs="0" nillable="true">
+                          <xsd:complexType>
+                            <xsd:sequence>
+                              <xsd:element name="DisplayName" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                            </xsd:sequence>
+                          </xsd:complexType>
+                        </xsd:element>
+                        <xsd:element name="NamedInsured" minOccurs="0" nillable="true">
+                          <xsd:complexType>
+                            <xsd:sequence>
+                              <xsd:element name="DisplayName" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                            </xsd:sequence>
+                          </xsd:complexType>
+                        </xsd:element>
+                        <xsd:element name="WC7ClassCode" minOccurs="0" nillable="true">
+                          <xsd:complexType>
+                            <xsd:sequence>
+                              <xsd:element name="Code" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                              <xsd:element name="DescInd" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                              <xsd:element name="ShortDesc" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                            </xsd:sequence>
+                          </xsd:complexType>
+                        </xsd:element>
+                      </xsd:sequence>
+                    </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="PeriodProRatedMiscValue" minOccurs="0" nillable="true" type="xsd:int" gw:type="java.lang.Integer"/>
+                </xsd:sequence>
+                <xsd:attribute name="action" type="xsd:string" gw:type="gw.xml.xsd.ArrayAction"/>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SupplDiseaseExposures" minOccurs="0" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Entry" minOccurs="0" nillable="true" maxOccurs="unbounded">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="BasisForRating" minOccurs="0" nillable="true" type="xsd:int" gw:type="java.lang.Integer"/>
+                  <xsd:element name="SupplDiseaseExposure" minOccurs="0" nillable="true">
+                    <xsd:complexType>
+                      <xsd:sequence>
+                        <xsd:element name="AuditedAmount" minOccurs="0" nillable="true" type="xsd:int" gw:type="java.lang.Integer"/>
+                        <xsd:element name="DiseaseCode" minOccurs="0" nillable="true">
+                          <xsd:complexType>
+                            <xsd:sequence>
+                              <xsd:element name="Code" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                              <xsd:element name="SupplDiseaseLoadingType" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                            </xsd:sequence>
+                          </xsd:complexType>
+                        </xsd:element>
+                        <xsd:element name="FixedId" minOccurs="0" nillable="true">
+                          <xsd:complexType>
+                            <xsd:sequence>
+                              <xsd:element name="ObjValue" minOccurs="0" nillable="true" type="xsd:long" gw:type="java.lang.Long"/>
+                            </xsd:sequence>
+                          </xsd:complexType>
+                        </xsd:element>
+                        <xsd:element name="Location" minOccurs="0" nillable="true">
+                          <xsd:complexType>
+                            <xsd:sequence>
+                              <xsd:element name="AddressLine1" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                              <xsd:element name="AddressLine2" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                              <xsd:element name="AddressLine3" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                              <xsd:element name="City" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                              <xsd:element name="DisplayName" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                              <xsd:element name="LocationNum" minOccurs="0" nillable="true" type="xsd:int" gw:type="java.lang.Integer"/>
+                              <xsd:element name="PostalCode" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                              <xsd:element name="PrimaryLoc" minOccurs="0" nillable="true" type="xsd:boolean" gw:type="java.lang.Boolean"/>
+                              <xsd:element name="State" minOccurs="0" nillable="true">
+                                <xsd:complexType>
+                                  <xsd:sequence>
+                                    <xsd:element name="Code" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                                    <xsd:element name="Description" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+                                  </xsd:sequence>
+                                </xsd:complexType>
+                              </xsd:element>
+                            </xsd:sequence>
+                          </xsd:complexType>
+                        </xsd:element>
+                      </xsd:sequence>
+                    </xsd:complexType>
+                  </xsd:element>
+                </xsd:sequence>
+                <xsd:attribute name="action" type="xsd:string" gw:type="gw.xml.xsd.ArrayAction"/>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

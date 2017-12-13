@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Generated WSDL for compsource.cc.api.fnoi.CSNewFNOIAPI web service--><wsdl:definitions targetNamespace="http://guidewire.com/compsource/cc/api/fnoi/CSNewFNOIAPI" name="CSNewFNOIAPI" xmlns="http://guidewire.com/compsource/cc/api/fnoi/CSNewFNOIAPI" xmlns:gwsoap="http://guidewire.com/ws/soapheaders" xmlns:gwwsdl="http://guidewire.com/pl/wsdl" xmlns:pogo="http://example.com/compsource/cc/api/util" xmlns:pogo2="http://guidewire.com/cc/typekey" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://guidewire.com/compsource/cc/api/fnoi/CSNewFNOIAPI" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/ws/soapheaders" schemaLocation="soapheaders.xsd"/>
+      <xs:import namespace="http://guidewire.com/cc/typekey"/>
+      <xs:import namespace="http://example.com/compsource/cc/api/util"/>
+      <!--createNewFNOI(String) : String-->
+      <xs:element name="createNewFNOI">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="fnoiXML" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="createNewFNOIResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SOAPException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="ConnectException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="RequiredFieldException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="FieldConversionException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="XmlException">
+        <xs:complexType/>
+      </xs:element>
+      <!--getOccupationalInjuryTypeTypeKeys() : TypekeyName[]-->
+      <xs:element name="getOccupationalInjuryTypeTypeKeys">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="getOccupationalInjuryTypeTypeKeysResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Entry" nillable="true" type="pogo:TypekeyName"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--getSpecificDetailedInjuryTypeTypeKeys() : TypekeyName[]-->
+      <xs:element name="getSpecificDetailedInjuryTypeTypeKeys">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="getSpecificDetailedInjuryTypeTypeKeysResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Entry" nillable="true" type="pogo:TypekeyName"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--getBodyPartTypeTypeKeys() : TypekeyName[]-->
+      <xs:element name="getBodyPartTypeTypeKeys">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="getBodyPartTypeTypeKeysResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Entry" nillable="true" type="pogo:TypekeyName"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--getDetailedBodyPartTypeTypeKeys(BodyPartType) : TypekeyName[]-->
+      <xs:element name="getDetailedBodyPartTypeTypeKeys">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="primaryBodyPart" minOccurs="0" type="pogo2:BodyPartType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getDetailedBodyPartTypeTypeKeysResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Entry" nillable="true" type="pogo:TypekeyName"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--getAccountOrgType_ExtTypeKeys() : TypekeyName[]-->
+      <xs:element name="getAccountOrgType_ExtTypeKeys">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="getAccountOrgType_ExtTypeKeysResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Entry" nillable="true" type="pogo:TypekeyName"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema targetNamespace="http://example.com/compsource/cc/api/util" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/cc/typekey"/>
+      <xs:complexType name="TypekeyName">
+        <xs:sequence>
+          <xs:element name="Code" type="xs:string" minOccurs="0"/>
+          <xs:element name="Name" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://guidewire.com/cc/typekey" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://example.com/compsource/cc/api/util"/>
+      <xs:simpleType name="BodyPartType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="head"/>
+          <xs:enumeration value="neck"/>
+          <xs:enumeration value="upper"/>
+          <xs:enumeration value="trunk"/>
+          <xs:enumeration value="lower"/>
+          <xs:enumeration value="multiple"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:portType name="CSNewFNOIAPIPortType">
+    <wsdl:operation name="createNewFNOI">
+      <wsdl:input name="createNewFNOI" message="createNewFNOI"/>
+      <wsdl:output name="createNewFNOIResponse" message="createNewFNOIResponse"/>
+      <!--If a communication errors occurs-->
+      <wsdl:fault name="SOAPException" message="SOAPException"/>
+      <!--If a connetion to the PAS cannot be established-->
+      <wsdl:fault name="ConnectException" message="ConnectException"/>
+      <!--If a required field is missing from the XML Document encoding the FNOI data-->
+      <wsdl:fault name="RequiredFieldException" message="RequiredFieldException"/>
+      <!--If an entity role constraint is violated in the XML Document encoding the FNOI data-->
+      <wsdl:fault name="FieldConversionException" message="FieldConversionException"/>
+      <!--If an error occurs parsings the XML Document encoding the FNOI data-->
+      <wsdl:fault name="XmlException" message="XmlException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getOccupationalInjuryTypeTypeKeys">
+      <wsdl:input name="getOccupationalInjuryTypeTypeKeys" message="getOccupationalInjuryTypeTypeKeys"/>
+      <wsdl:output name="getOccupationalInjuryTypeTypeKeysResponse" message="getOccupationalInjuryTypeTypeKeysResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getSpecificDetailedInjuryTypeTypeKeys">
+      <wsdl:input name="getSpecificDetailedInjuryTypeTypeKeys" message="getSpecificDetailedInjuryTypeTypeKeys"/>
+      <wsdl:output name="getSpecificDetailedInjuryTypeTypeKeysResponse" message="getSpecificDetailedInjuryTypeTypeKeysResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getBodyPartTypeTypeKeys">
+      <wsdl:input name="getBodyPartTypeTypeKeys" message="getBodyPartTypeTypeKeys"/>
+      <wsdl:output name="getBodyPartTypeTypeKeysResponse" message="getBodyPartTypeTypeKeysResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getDetailedBodyPartTypeTypeKeys">
+      <wsdl:input name="getDetailedBodyPartTypeTypeKeys" message="getDetailedBodyPartTypeTypeKeys"/>
+      <wsdl:output name="getDetailedBodyPartTypeTypeKeysResponse" message="getDetailedBodyPartTypeTypeKeysResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getAccountOrgType_ExtTypeKeys">
+      <wsdl:input name="getAccountOrgType_ExtTypeKeys" message="getAccountOrgType_ExtTypeKeys"/>
+      <wsdl:output name="getAccountOrgType_ExtTypeKeysResponse" message="getAccountOrgType_ExtTypeKeysResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CSNewFNOIAPISoap12Binding" type="CSNewFNOIAPIPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="createNewFNOI">
+      <soap12:operation style="document"/>
+      <wsdl:input name="createNewFNOI">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createNewFNOIResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ConnectException">
+        <soap12:fault name="ConnectException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="FieldConversionException">
+        <soap12:fault name="FieldConversionException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap12:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getOccupationalInjuryTypeTypeKeys">
+      <soap12:operation style="document"/>
+      <wsdl:input name="getOccupationalInjuryTypeTypeKeys">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getOccupationalInjuryTypeTypeKeysResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSpecificDetailedInjuryTypeTypeKeys">
+      <soap12:operation style="document"/>
+      <wsdl:input name="getSpecificDetailedInjuryTypeTypeKeys">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSpecificDetailedInjuryTypeTypeKeysResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBodyPartTypeTypeKeys">
+      <soap12:operation style="document"/>
+      <wsdl:input name="getBodyPartTypeTypeKeys">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getBodyPartTypeTypeKeysResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDetailedBodyPartTypeTypeKeys">
+      <soap12:operation style="document"/>
+      <wsdl:input name="getDetailedBodyPartTypeTypeKeys">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDetailedBodyPartTypeTypeKeysResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAccountOrgType_ExtTypeKeys">
+      <soap12:operation style="document"/>
+      <wsdl:input name="getAccountOrgType_ExtTypeKeys">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAccountOrgType_ExtTypeKeysResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CSNewFNOIAPISoap11Binding" type="CSNewFNOIAPIPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="createNewFNOI">
+      <soap11:operation style="document"/>
+      <wsdl:input name="createNewFNOI">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createNewFNOIResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ConnectException">
+        <soap11:fault name="ConnectException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="FieldConversionException">
+        <soap11:fault name="FieldConversionException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap11:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getOccupationalInjuryTypeTypeKeys">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getOccupationalInjuryTypeTypeKeys">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getOccupationalInjuryTypeTypeKeysResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSpecificDetailedInjuryTypeTypeKeys">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getSpecificDetailedInjuryTypeTypeKeys">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSpecificDetailedInjuryTypeTypeKeysResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBodyPartTypeTypeKeys">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getBodyPartTypeTypeKeys">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getBodyPartTypeTypeKeysResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDetailedBodyPartTypeTypeKeys">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getDetailedBodyPartTypeTypeKeys">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDetailedBodyPartTypeTypeKeysResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAccountOrgType_ExtTypeKeys">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getAccountOrgType_ExtTypeKeys">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAccountOrgType_ExtTypeKeysResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CSNewFNOIAPI">
+    <wsdl:port name="CSNewFNOIAPISoap12Port" binding="CSNewFNOIAPISoap12Binding">
+      <soap12:address location="http://gwqa1.s-i-f.local:8080/cc/ws/compsource/cc/api/fnoi/CSNewFNOIAPI"/>
+      <gwwsdl:address location="${cc}/ws/compsource/cc/api/fnoi/CSNewFNOIAPI"/>
+    </wsdl:port>
+    <wsdl:port name="CSNewFNOIAPISoap11Port" binding="CSNewFNOIAPISoap11Binding">
+      <soap11:address location="http://gwqa1.s-i-f.local:8080/cc/ws/compsource/cc/api/fnoi/CSNewFNOIAPI/soap11"/>
+      <gwwsdl:address location="${cc}/ws/compsource/cc/api/fnoi/CSNewFNOIAPI/soap11"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:message name="createNewFNOI">
+    <wsdl:part name="parameters" element="createNewFNOI"/>
+  </wsdl:message>
+  <wsdl:message name="createNewFNOIResponse">
+    <wsdl:part name="parameters" element="createNewFNOIResponse"/>
+  </wsdl:message>
+  <wsdl:message name="SOAPException">
+    <wsdl:part name="SOAPException" element="SOAPException"/>
+  </wsdl:message>
+  <wsdl:message name="ConnectException">
+    <wsdl:part name="ConnectException" element="ConnectException"/>
+  </wsdl:message>
+  <wsdl:message name="RequiredFieldException">
+    <wsdl:part name="RequiredFieldException" element="RequiredFieldException"/>
+  </wsdl:message>
+  <wsdl:message name="FieldConversionException">
+    <wsdl:part name="FieldConversionException" element="FieldConversionException"/>
+  </wsdl:message>
+  <wsdl:message name="XmlException">
+    <wsdl:part name="XmlException" element="XmlException"/>
+  </wsdl:message>
+  <wsdl:message name="getOccupationalInjuryTypeTypeKeys">
+    <wsdl:part name="parameters" element="getOccupationalInjuryTypeTypeKeys"/>
+  </wsdl:message>
+  <wsdl:message name="getOccupationalInjuryTypeTypeKeysResponse">
+    <wsdl:part name="parameters" element="getOccupationalInjuryTypeTypeKeysResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getSpecificDetailedInjuryTypeTypeKeys">
+    <wsdl:part name="parameters" element="getSpecificDetailedInjuryTypeTypeKeys"/>
+  </wsdl:message>
+  <wsdl:message name="getSpecificDetailedInjuryTypeTypeKeysResponse">
+    <wsdl:part name="parameters" element="getSpecificDetailedInjuryTypeTypeKeysResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getBodyPartTypeTypeKeys">
+    <wsdl:part name="parameters" element="getBodyPartTypeTypeKeys"/>
+  </wsdl:message>
+  <wsdl:message name="getBodyPartTypeTypeKeysResponse">
+    <wsdl:part name="parameters" element="getBodyPartTypeTypeKeysResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getDetailedBodyPartTypeTypeKeys">
+    <wsdl:part name="parameters" element="getDetailedBodyPartTypeTypeKeys"/>
+  </wsdl:message>
+  <wsdl:message name="getDetailedBodyPartTypeTypeKeysResponse">
+    <wsdl:part name="parameters" element="getDetailedBodyPartTypeTypeKeysResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getAccountOrgType_ExtTypeKeys">
+    <wsdl:part name="parameters" element="getAccountOrgType_ExtTypeKeys"/>
+  </wsdl:message>
+  <wsdl:message name="getAccountOrgType_ExtTypeKeysResponse">
+    <wsdl:part name="parameters" element="getAccountOrgType_ExtTypeKeysResponse"/>
+  </wsdl:message>
+  <wsdl:message name="gw-authentication">
+    <wsdl:part name="gw-authentication" element="gwsoap:authentication"/>
+  </wsdl:message>
+  <wsdl:message name="gw-locale">
+    <wsdl:part name="gw-locale" element="gwsoap:locale"/>
+  </wsdl:message>
+</wsdl:definitions>

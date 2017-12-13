@@ -1,0 +1,15 @@
+dn: m-oid=1.3.6.1.4.1.1234567.5.2.5, ou=objectclasses, cn=compsourceok, ou=schema
+objectclass: metaObjectClass
+objectclass: metaTop
+objectclass: top
+m-description: Cashier for CompSource
+m-may: csoPolicyNumber
+m-may: csoPhCompanyName
+m-may: csoPcAccountId
+m-may: csoOkGovUserId
+m-must: cn
+m-name: csoCashier
+m-oid: 1.3.6.1.4.1.1234567.5.2.5
+m-supobjectclass: csoPerson
+m-typeobjectclass: AUXILIARY
+

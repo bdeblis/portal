@@ -1,0 +1,155 @@
+/* -------------------------------------------------------------- 
+   
+   typography.css
+ 
+   
+-------------------------------------------------------------- */
+
+/* Default font settings. */
+
+body { 
+ /* customize_body */ font: normal 13px futura, 'Trebuchet MS', arial; /* customize_body */
+
+}
+
+
+/* Headings
+-------------------------------------------------------------- */
+
+/*text elements*/
+
+p {
+font-size:14px;
+}
+
+a:focus {
+outline:1px dotted invert;
+}
+
+hr {
+clear:both;
+height:0;
+border-color:#ccc;
+border-style:solid;
+border-width:1px 0 0;
+}
+
+h1 {
+font-size:2em;
+padding-bottom:5px;
+
+}
+
+h2 {
+font-size:23px;
+margin-top:1em;
+}
+
+h3 {
+font-size:1.45em;
+}
+
+h4, #whowhere {
+font-size:.95em;
+line-height:.5em;
+}
+
+h5 {
+font-size:1.2em;
+}
+
+h6 {
+font-size:1em;
+text-transform:uppercase;
+}
+
+ol {
+
+}
+
+ul {
+
+}
+
+li {
+
+}
+
+p,dl,hr,h1,h2,h3,h4,h5,h6,ol,ul,pre,table,address,fieldset {
+
+}
+
+h1,h2,h3,h4,h5,h6 {
+line-height:1.2em;
+
+}
+
+h1 a {
+font-weight:400;
+}
+
+
+/* Text elements
+-------------------------------------------------------------- */
+
+p           { margin: 0 0 1.5em; }
+p img.left  { float: left; margin: 1.5em 1.5em 1.5em 0; padding: 0; }
+p img.right { float: right; margin: 1.5em 0 1.5em 1.5em; }
+
+a:focus, 
+a:hover     { color: #000; }
+a 			{ text-decoration: underline; }
+
+blockquote  { margin: 1.5em; color: #666; font-style: italic; }
+strong      { font-weight: bold; }
+em,dfn      { font-style: italic; }
+dfn         { font-weight: bold; }
+sup, sub    { line-height: 0; }
+
+abbr, 
+acronym     { border-bottom: 1px dotted #666; }
+address     { margin: 0 0 1.5em; font-style: italic; }
+del         { color:#666; }
+
+pre 				{ margin: 1.5em 0; white-space: pre; }
+pre,code,tt { font: 1em 'andale mono', 'lucida console', monospace; line-height: 1.5; }
+
+
+/* Lists
+-------------------------------------------------------------- */
+
+li ul, 
+li ol       { margin:0;  list-style: none;}
+ ol      { margin: 0; }
+
+ul          { list-style-type: disc; }
+ol          { list-style-type: decimal; }
+
+dl          { margin: 0 0 1.5em 0; }
+dl dt       { font-weight: bold; }
+dd          { margin-left: 1.5em;}
+
+
+
+.ccm-subhead {
+	float: none !important;
+	padding-left: 0 !Important;
+	width: 100% !Important;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif !Important;
+	font-weight: bold !Important;
+	font-size: 14px !Important;
+	line-height: 18px !Important;
+}
+
+.ccm-subsubhead {
+	float: left !Important;
+	padding-left: 0 !Important;
+	width: 100% !Important;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif !Important;
+	font-weight: regular !Important;
+	font-style: italic;
+	font-size: 12px !Important;
+	line-height: 18px !Important;
+}
+
+

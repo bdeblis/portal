@@ -1,0 +1,151 @@
+====== linux box ----------
+redhat enterprise server
+
+-- find out what's installed -00
+yum list installed 
+-- find out what's available --
+yum list available
+
+
+
+
+------------ restarting a center -------------
+service cc restart (or bc, pc)
+
+============= doing builds ====
+NOTE! FOR WEB SERVICE RELATED CHANGES, THE POM.XML FILE 
+IN THE ..\PORTAL\WEBSERVICECLIENT FOLDER WILL NEED TO
+HAVE THE WSDL PROPERTIES POINT TO LOCALHOST, OR A SERVER
+THAT HAS THE NEWEST CHANGES ON IT.
+
+*************** do the INT1 environment first as a SMOKE TEST *****************
+
+login to jenkins for building (isrk / CSOadmin)
+
+test and app build tab , FOR ALL CENTERS run "driver build" AND "driver test"
+test and app build tab , FOR ONE CENTER run "CENTER driver test"  THEN "CENTER driver build" example, run PolicyCenterTest THEN PolicyCenterApplicationBuild
+
+
+
+putty to vm-gwbuild for deploying
+cd /srv/DeployAndRestart
+./deploy.sh pc rat3 lastSuccessful
+
+============ cso portal log path =================
+/var/log/tomcat6/CsoPortal.log
+
+/var/lib/tomcat6/webapps/compsource-portal-webui-stripes/WEB-INF/classes/log4j.properties
+--------------------- logging.properties file locations -------
+/srv/tomcat/cc/webapps/.. there are two under here
+------------------------------------------------
+============= ldap ===============
+
+to clone, You'll need to import compsourceok.ldif and admin.ldif, in that order. 
+
+machine url is vm-gwportaldev1.s-i-f.local
+
+The pid location is -- /var/lib/apacheds-2.0.0-M15/default/run/
+
+The file is apacheds-default.pid
+
+To start it, run: /etc/init.d/apacheds-2.0.0-M15-default start 
+
+
+THE PORTAL INSTANCE WILL HAVE TO BE RESTARTED IF THE LDAP SERVER GOES DOWN
+
+http://directory.apache.org/apacheds/basic-ug/1.4.3-adding-partition.html
+
+=========== cms related paths ====================
+
+/srv/csd/cms/query/request
+
+C:\srv\csd\cms\submission\response\ToProcess  (claim input files)
+	
+/srv/tomcat/cc/conf/resources/properties/cms.properties
+/tmp/gwlogs/claimcenter/logs/plugins/cms.log
+
+To process e2e locally, point your claimcenter config.xml entry to e2e, as well as point the db.properties INT1 entry to e2e
+
+========== tomcat =========
+/var/lib/tomcat6/webapps
+/etc/tomcat
+/srv/tomcat/cc/logs
+/srv/tomcat/cc/webapps/cc/modules/configuration/config/config.xml -- where the db stuff is located
+
+============================== setting up for a new portal instance =================
+to see what's happening during process, look in /var/log/tomcat6 for logging files
+
+a couple of portal urls:
+
+http://rat3portal.s-i-f.local:8080/
+http://rat2portal.s-i-f.local:8080/
++++++++++++
+found the issue. there are a couple of directories that get cloned,
+that have to have their names changed for the specific instance.
+
+For example when cloning from rat3, the clone has a folder
+/usr/share/tomcat6/conf/Catalina/rat3portal.s-i-f.local, and
+I needed to rename it to /usr/share/tomcat6/conf/Catalina/rat2portal.s-i-f.local.
+++++++++++++++++++++
+Here's how to find the folders that need to be renamed after cloning
+find / -type d -name "rat*" -print
+/etc/tomcat6/Catalina/rat2portal.s-i-f.local
+/var/cache/tomcat6/work/Catalina/rat2portal.s-i-f.local
+/var/lib/tomcat6/webapps/rat2portal.s-i-f.local
+-------------------
+
+I’m making notes as I go!
+
+We need to do the new ldaps, so I’m reading up on how to set one up.
+I’m going to email Roger a question about some files that he provided
+that are related to configuring apacheds.
+
+uid=admin,o=compsourceok,dc=com / Password1
+
+ /etc/init.d/apacheds-2.0.0-M15-default start | stop
+
+
+cd to /usr/share/tomcat6/conf/Catalina
+
+ mkdir rat3portal.s-i-f.local
+ 
+ after deploy there will be a file ROOT.xml, need to do :  chmod u=rw,go=r ROOT.xml
+ 
+ cd to /usr/share/tomcat6/webapps
+ 
+ mkdir rat3portal.s-i-f.local
+ 
+  cd to /usr/share/tomcat6/conf
+  
+  make sure server.xml has a <host> entry for the new instance
+  
+  make sure owner of the webapps folder is tomcat:
+  
+   chown tomcat rat3portal.s-i-f.local/
+  
+  starting and stopping tomcat:
+  
+  /etc/init.d/tomcat6 restart
+  /etc/init.d/tomcat6 start
+  /etc/init.d/tomcat6 stop
+  
+  on Rat3, my user name is ron
+on Rat2, my user name is ron1  
+ 
+eeportal.s-i-f.local
+
+============= web service dev ================
+If you need to add/change parameters in a guidewire service,
+run regen-wsi-local
+
+======== tpa ===========
+/srv/csd/tpa/cbr/pendingImport/
+/srv/tomcat/cc/conf/resources/properties/tpa.properties
+/tmp/gwlogs/ClaimCenter/logs/processplugin/importtpaclaims.log
+
+\\dev-central\e2e\tpa\acco\imported   
+
+======================= debugging remotely ================
+
+vm-gwportaltst1.s-i-f.local is the qa2 host name
+RKing-IS-L7 is localhost name

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<xsd:schema
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:gw="http://guidewire.com/xsd"
+      xmlns="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.claim.workstatusmodel"
+      targetNamespace="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.claim.workstatusmodel"
+      elementFormDefault="qualified">
+  <xsd:element
+        name="WorkStatus" type="WorkStatus" nillable="true"/>
+  <xsd:complexType
+        name="WorkStatus">
+    <xsd:sequence>
+      <xsd:element name="Status" minOccurs="0" nillable="true" type="xsd:string"/>
+      <xsd:element name="StatusDate" minOccurs="0" nillable="true" type="xsd:dateTime" gw:type="java.util.Date"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

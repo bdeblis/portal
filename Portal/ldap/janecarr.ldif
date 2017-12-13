@@ -1,0 +1,22 @@
+version: 1
+
+dn: cn=jane carr janecarr,ou=users,o=compsourceok,dc=com
+objectClass: organizationalPerson
+objectClass: csoExtension
+objectClass: person
+objectClass: csoPerson
+objectClass: inetOrgPerson
+objectClass: csoCashier
+objectClass: top
+cn: jane carr janecarr
+sn: cashier
+csoChallengeAnswer: cashier
+csoChallengeQuestion: what's your role?
+csoOkGovUserId: null
+givenname: jane
+homePhone: 555-555-5555
+mail: jane_c@compsourceok.com
+uid: janecarr
+userPassword:: e1NTSEF9ZGJTMWdnZDhzcFN5RkRRaW1HL0FHNlZna2tHd0YyVkNuVE0vMXc9P
+ Q==
+

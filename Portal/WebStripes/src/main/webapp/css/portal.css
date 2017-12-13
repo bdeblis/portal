@@ -1,0 +1,567 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Portal Customizations */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.portal-headline {
+    padding: 20px 30px 0 30px;
+}
+
+.portal {
+    clear: both;
+}
+
+.portal-form {
+    padding: 10px 30px 0 30px;
+    overflow: hidden;
+}
+
+.portal-row {
+    display: inline-block;
+    position: relative;
+    width: 560px;
+    float: left;
+    clear: both;
+}
+
+.portal-spacer-5 {
+    padding-top: 5px;
+}
+
+.portal-spacer-10 {
+    padding-top: 5px;
+}
+.portal-spacer-20 {
+    padding-top: 20px;
+}
+.portal-hr{
+	margin: 0 0 10px 0;
+	width: 560px;
+}
+
+.portal-col-25 {
+    width: 25%;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+.portal-col-20 {
+    width: 20%;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+.portal-col-33 {
+    width: 33%;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+.portal-col-40 {
+    width: 40%;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+.portal-col-66 {
+    width: 66%;
+    float: left;
+    padding-left: 5px;
+    text-align: left;
+}
+
+.portal-col-33r {
+    width: 33%;
+    float: left;
+    padding-left: 5px;
+    text-align: left;
+}
+
+.portal-col-66r {
+    width: 66%;
+    float: right;
+    padding-right: 5px;
+    text-align: right;
+}
+
+.portal-col-50 {
+    width: 50%;
+    float: left;
+    padding: 5px;
+    text-align: center;
+}
+
+
+.portal-col-100 {
+    width: 100%;
+    float: left;
+    padding-left: 5px;
+    text-align: left;
+}
+
+.portal-label-33 {
+    float: right;
+    padding-right: 5px;
+    text-align: right;
+    line-height: 24px;
+}
+
+.portal-label-100 {
+    float: left;
+    padding-right: 5px;
+    text-align: left;
+    line-height: 24px;
+}
+
+.portal-required:before {
+    content: "*";
+    font-size: 20px;
+    color: #db2021 !important;
+    padding-right: 5px;   
+    position: relative;
+    top: 8px;
+}
+
+.money-text {
+    text-align: right;
+}
+
+.portal-form input[type=text],
+.portal-form input[type=email],
+.portal-form input[type=url],
+.portal-form input[type=password]{
+    width: 100%;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.portal-form textarea {
+    width: 100%;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.portal-form input[type=text]:focus,
+.portal-form input[type=email]:focus,
+.portal-form input[type=url]:focus,
+.portal-form input[type=password]:focus,
+.portal-form textarea:focus {
+    outline: 0;
+    border-color: #4697e4;
+}	
+
+.portal-form input[checkbox] {
+    margin: 0 20px 0 0;
+}
+
+.portal-fieldset {
+    padding: 0 0 10px 0 !important;
+    *padding: 0 0 0 0 !important;
+    padding-left: 0px;
+}
+
+.portal-field-container {
+    padding: 0 !important;
+    margin: -5px 0 5px 15px !important;
+    position: relative;
+}
+
+.portal-form input[type=radio] {
+    
+}
+
+.vertical-radio {
+    position: absolute;
+    left: 30px;
+}
+
+.portal-form-radio-label {
+    line-height: 14px;
+}
+
+
+.portal-legend {
+    line-height: 18px;
+}
+
+.portal-width-25 {
+    width: 25% !Important;
+}
+
+.portal-width-40 {
+    width: 40% !Important;
+}
+
+.portal-width-60 {
+    width: 60% !Important;
+}
+
+.portal-width-65 {
+    width: 65% !Important;
+}
+
+.portal-width-80 {
+    width: 80% !Important;
+}
+
+.portal-width-100 {
+    width: 100% !Important;
+}
+
+
+
+.portal-width-auto {
+    width: auto !Important;
+}
+
+.portal-left {
+    float: left !Important;
+}
+
+.portal-right {
+    float: right !Important;
+}
+
+.portal-indent {
+    padding-left: 20px;
+}
+
+.portal-error {
+    /*
+    padding: 0 !important;
+    margin: -5px 0 15px !important;
+    position: relative;
+    white-space: nowrap;  
+    float: left !Important; 
+    */
+   clear: both;
+}
+
+.portal-fnoi-message{
+    font-size: 24px;
+    color: blue;
+}
+
+.portal-error-top {
+    padding: 0px 0px 0 30px;
+}
+
+/* Submit & Buttons */
+.portal-submit { 
+    width: 80px !important;
+    height: 32px !important;
+    line-height: 24px;
+    padding: 0 0 3px 0;
+    margin: 15px 0 0 0 !important;
+    cursor: pointer;
+    float: left;
+}
+
+.portal-processing { 
+    display:none;
+}
+
+.portal-button {
+    float: left;
+    padding: 5px;
+}
+
+/* checkbox customizations */
+ul.checkbox  { 
+    margin: 0; 
+    padding: 0; 
+    list-style: none !important; 
+} 
+
+ul.checkbox li input { 
+    margin-right: .25em; 
+    margin-top: 6px !important;
+
+} 
+
+ul.checkbox li { 
+    border: 1px transparent solid; 
+    margin-left: 0px !important;
+    padding-bottom: 0px !important;
+} 
+
+ul.checkbox li label { 
+    margin-left: 5px;
+    line-height: 25px !important;
+} 
+
+/* Container */
+.containerLabel  {  
+    margin: 0 0px 6px 0;
+}
+
+/* Sections */
+.sectionTitle {
+    font-size: 15px;
+    line-height: 19px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    padding: 10px 0 10px 0;
+    clear: both;
+}
+
+.sectionSubTitle {
+    font-size: 12px;
+    line-height: 15px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    padding: 10px 0 10px 0;
+    clear: both;
+}
+
+/* Standalone Checkboxes */
+.singleCheckbox {
+    display: inline !Important;
+    width: 13px !Important;
+    height: 13px !Important;
+    margin-top: 6px !Important;
+    padding-left: 0px !Important; 
+    padding-right: 0px !Important;
+        
+}
+
+.singleCheckboxLable {
+    display: inline !Important;
+    width: auto !Important;  
+}
+
+/* Portal Table System */
+.portal-reportRow {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+	
+    margin:0 auto;
+    padding-bottom: 5px;
+    clear: both;
+}
+.portal-reportTitle
+{
+    font-size: 16px;
+    color: black;
+    display:block;
+    float:left;
+    width: 60%;
+    line-height: 18px;
+    position: relative;
+    top: 27px;
+}
+.portal-reportTitleContent
+{
+    font-size: 16px;
+}
+.portal-reportInst
+{
+    font-size: 10px;
+    color: black;
+    display:block;
+    float:left;
+    width: 40%;
+}
+
+.portal-content-30 {
+    width: 30%;
+    float: left;
+    text-align: left;
+}
+.portal-content-40 {
+    width: 40%;
+    float: left;
+    padding-right: 5px;
+    text-align: left;
+}
+.portal-content-50 {
+    width: 50%;
+    float: left;
+    text-align: left;
+    display: block;
+}
+.portal-content-60 {
+    width: 60%;
+    float: left;
+    padding-right: 5px;
+    text-align: left;
+    display: block;
+}
+.portal-content-70 {
+    width: 70%;
+    float: left;
+    text-align: left;
+    display: block;
+}
+.portal-content-100 {
+    width: 100%;
+    float: left;
+    text-align: left;
+    display: block;
+}
+
+.portal-table
+{
+    width: 500px;
+    margin:0 auto;
+
+}
+.portal-hCol1
+{
+    width: 80px;
+    vertical-align: bottom;
+    text-align: center;
+    padding: 5px;
+    font-weight: bold;
+}
+.portal-hCol2
+{
+    width: 240px;
+    vertical-align: bottom;
+    text-align: left;
+    font-weight: bold;	
+    padding: 5px;
+}
+.portal-hCol3
+{
+    width: 50px;
+    vertical-align: bottom;
+    text-align: left;
+    font-weight: bold;	
+
+    padding: 5px;
+}
+
+.portal-hCol4
+{
+    width: 50px;
+    vertical-align: bottom;
+    text-align: left;
+    font-weight: bold;	
+
+    padding: 5px;
+}
+
+.portal-tbody
+{
+    border: 1px solid black;
+}
+.portal-dCol1
+{
+    width: 80px;
+    vertical-align: middle;
+    text-align: center;
+
+    padding: 5px;
+}
+.portal-dCol2
+{
+    width: 240px;
+    vertical-align: middle;
+
+    padding: 5px;
+}
+.portal-dCol3
+{
+    width: 105px;
+    vertical-align: middle;
+    text-align: right;
+    padding: 5px;
+}
+.portal-dCol4
+{
+    width: 50px;
+    vertical-align: middle;
+    text-align: right;
+    padding: 5px;
+}
+
+.portal-fCol1
+{
+    width: 80px;
+    vertical-align: bottom;
+    text-align: center;
+
+    padding: 5px;
+}
+.portal-fCol2
+{
+    width: 345px;
+    vertical-align: bottom;
+    padding: 5px 10px 5px 5px;
+    text-align: right;
+}
+.portal-fCol3
+{
+    width: 75px;
+    vertical-align: bottom;
+    text-align: right;
+    padding: 5px;
+}
+
+
+.error {
+    color: #ff0000
+}
+
+.setStep {
+    color: #ff0000
+}
+
+.payAmt {
+    text-align: right
+}
+
+/* Error Styling for Stripes Default Error Class
+.error {
+    border-top: 1px solid #b72222 !Important;  
+    border-left: 1px solid #b72222 !Important;
+    border-right: 1px solid #b72222 !Important;
+    border-bottom: 1px solid #b72222 !Important;
+}
+
+.portal-form input.error {
+border: 2px solid #880000 ;
+background-color: #FFDDDD;
+}
+
+.portal-form label.error {
+color: #880000 ;
+font-weight: bold;
+text-decoration: underline;
+}
+*/
+
+#confirm {display:none;}
+
+/* Overlay */
+#confirm-overlay {background-color:#eee;}
+
+/* Container */
+#confirm-container {height:240px; width:420px; font: 16px/22px 'Trebuchet MS', Verdana, Arial; text-align:left; background:#fff; border:2px solid #336699;}
+#confirm-container .header {height:30px; line-height:30px; width:100%; background: repeat-x; color:#fff; font-weight:bold;}
+#confirm-container .header span {padding-left:8px;}
+#confirm-container .message {color:#333; font-size:14px; margin:0; padding:12px 4px 12px 8px;}
+#confirm-container .buttons {line-height:26px; width:160px; float:right; padding:10px 8px 0;} 
+#confirm-container .buttons div {float:right; margin-left:4px; width:70px; height:26px; color:#666; font-weight:bold; text-align:center; background: repeat-x; border:1px solid #bbb; cursor:pointer;} 
+#confirm-container a.modal-close,
+#confirm-container a.modal-close:link,
+#confirm-container a.modal-close:active,
+#confirm-container a.modal-close:visited {text-decoration:none; font-weight:bold; position:absolute; right:10px; top:2px; color:#fff;}
+#confirm-container a.modal-close:hover {color:#ccc;}

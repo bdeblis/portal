@@ -1,0 +1,22 @@
+dn: cn=Ron King roncking,ou=users,o=compsource,dc=com
+csoOkGovUserId: null
+csoPcAccountId: 02332400
+csoPhCompanyName: rons test company
+givenname: Ron
+csoChallengeAnswer: williams
+csoChallengeQuestion: moms maiden
+csoPolicyNumber: 02332400
+uid: roncking
+userPassword: {SSHA512}PkjgovHCUDnceGVB2hchccuoGDheOeYsG+cwcQf2JD5uqGHpNe1ZZd
+ ENTJJo5/GUl2xUX7GgFX5wd+HPbs/tVMrIc1fkxaqW
+objectClass: csoExtension
+objectClass: organizationalPerson
+objectClass: person
+objectClass: csoPolicyholder
+objectClass: csoPerson
+objectClass: inetOrgPerson
+objectClass: top
+cn: Ron King roncking
+sn: King
+homePhone: 405-555-5555
+mail: ron_k@compsourceok.com

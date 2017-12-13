@@ -1,0 +1,20 @@
+dn: cn=april dunsworth,ou=users,o=compsourceok,dc=com
+objectClass: organizationalPerson
+objectClass: csoExtension
+objectClass: person
+objectClass: csoPerson
+objectClass: inetOrgPerson
+objectClass: csoCashier
+objectClass: top
+cn: april dunsworth
+sn: cashier
+csoChallengeAnswer: cashier
+csoChallengeQuestion: what's your role?
+csoOkGovUserId: null
+givenname: april
+homePhone: 555-555-5555
+mail: april_d@compsourceok.com
+uid: s-i-f\fsad
+userPassword:: e1NTSEF9ZGJTMWdnZDhzcFN5RkRRaW1HL0FHNlZna2tHd0YyVkNuVE0vMXc9P
+ Q==
+

@@ -1,0 +1,23 @@
+version: 1
+
+dn: cn=matt mortimer itmm,ou=users,o=compsourceok,dc=com
+objectClass: csoCashier
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: csoPerson
+objectClass: csoExtension
+objectClass: person
+objectClass: top
+cn: matt mortimer itmm
+csoChallengeAnswer: cashier
+csoChallengeQuestion: what's your role?
+csoOkGovUserId: null
+givenname: matt
+homePhone: 444-555-1212
+mail: mmortimer@compsourcemutual.com
+sn: cashier
+uid: itmm
+userPassword:: e1NTSEF9ZGJTMWdnZDhzcFN5RkRRaW1HL0FHNlZna2tHd0YyVkNuVE0vMXc9P
+ Q==
+ 
+ 

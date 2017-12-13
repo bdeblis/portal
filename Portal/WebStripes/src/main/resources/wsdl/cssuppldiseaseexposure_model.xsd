@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://guidewire.com/pc/gx/compsource.pc.api.payrollreport.gx.cssuppldiseaseexposure_model" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gw="http://guidewire.com/xsd" xmlns="http://guidewire.com/pc/gx/compsource.pc.api.payrollreport.gx.cssuppldiseaseexposure_model">
+  <xsd:element name="CSSupplDiseaseExposure" type="CSSupplDiseaseExposure" nillable="true"/>
+  <xsd:complexType name="CSSupplDiseaseExposure">
+    <xsd:sequence>
+      <xsd:element name="SupplDiseaseExposure" minOccurs="0" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="AuditedAmount" minOccurs="0" nillable="true" type="xsd:int" gw:type="java.lang.Integer"/>
+            <xsd:element name="FixedId" minOccurs="0" nillable="true">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="ObjValue" minOccurs="0" nillable="true" type="xsd:long" gw:type="java.lang.Long"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

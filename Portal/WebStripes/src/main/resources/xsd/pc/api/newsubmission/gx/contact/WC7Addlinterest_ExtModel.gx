@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<xsd:schema
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:gw="http://guidewire.com/xsd"
+      xmlns="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.contact.wc7addlinterest_extmodel"
+      targetNamespace="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.contact.wc7addlinterest_extmodel"
+      elementFormDefault="qualified"
+      xmlns:ns0="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.contact.policycontactrolemodel">
+  <xsd:import
+        namespace="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.contact.policycontactrolemodel" schemaLocation="PolicyContactRoleModel.gx"/>
+  <xsd:element
+        name="WC7AddlInterest_Ext" type="WC7AddlInterest_Ext" nillable="true"/>
+  <xsd:complexType
+        name="WC7AddlInterest_Ext">
+    <xsd:sequence>
+      <xsd:element name="AdditionalInterestType" minOccurs="0" nillable="true" type="xsd:string"/>
+      <xsd:element name="PolicyAddlInterest" minOccurs="0" nillable="true" type="ns0:PolicyContactRole"/>
+      <xsd:element name="Relationship" minOccurs="0" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

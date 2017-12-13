@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<xsd:schema
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:gw="http://guidewire.com/xsd"
+      xmlns="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.note.notetopictypemodel"
+      targetNamespace="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.note.notetopictypemodel"
+      elementFormDefault="qualified">
+  <xsd:element
+        name="NoteTopicType" type="NoteTopicType" nillable="true"/>
+  <xsd:complexType
+        name="NoteTopicType">
+    <xsd:sequence>
+      <xsd:element name="Description" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+      <xsd:element name="DisplayName" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

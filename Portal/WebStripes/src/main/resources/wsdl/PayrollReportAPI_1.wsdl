@@ -1,0 +1,1754 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Generated WSDL for compsource.pc.api.payrollreport.PayrollReportAPI web service-->
+<wsdl:definitions targetNamespace="http://guidewire.com/compsource/pc/api/payrollreport/PayrollReportAPI" name="PayrollReportAPI" xmlns="http://guidewire.com/compsource/pc/api/payrollreport/PayrollReportAPI" xmlns:gwsoap="http://guidewire.com/ws/soapheaders" xmlns:gwwsdl="http://guidewire.com/pl/wsdl" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://guidewire.com/compsource/pc/api/payrollreport/PayrollReportAPI" elementFormDefault="qualified" xmlns:imported="http://guidewire.com/pc/gx/compsource.pc.api.payrollreport.gx.cspolicyperiod_model" xmlns:imported2="http://guidewire.com/pc/gx/compsource.pc.api.payrollreport.gx.csauditinformation_model" xmlns:imported3="http://guidewire.com/pc/gx/compsource.pc.api.payrollreport.gx.csauditinformationdetails_model" xmlns:imported4="http://guidewire.com/pc/gx/compsource.pc.api.payrollreport.gx.cscoveredemployee_model" xmlns:imported5="http://guidewire.com/pc/gx/compsource.pc.api.payrollreport.gx.csupdatecoveredemployeeresponse_model" xmlns:imported6="http://guidewire.com/pc/gx/compsource.pc.api.payrollreport.gx.cssuppldiseaseexposure_model" xmlns:imported7="http://guidewire.com/pc/gx/compsource.pc.api.payrollreport.gx.cspremiumdetails_model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/ws/soapheaders" schemaLocation="soapheaders.xsd"/>
+      <xs:import namespace="http://guidewire.com/pc/gx/compsource.pc.api.payrollreport.gx.cspremiumdetails_model" schemaLocation="cspremiumdetails_model.xsd"/>
+      <xs:import namespace="http://guidewire.com/pc/gx/compsource.pc.api.payrollreport.gx.cssuppldiseaseexposure_model" schemaLocation="cssuppldiseaseexposure_model.xsd"/>
+      <xs:import namespace="http://guidewire.com/pc/gx/compsource.pc.api.payrollreport.gx.csupdatecoveredemployeeresponse_model" schemaLocation="csupdatecoveredemployeeresponse_model.xsd"/>
+      <xs:import namespace="http://guidewire.com/pc/gx/compsource.pc.api.payrollreport.gx.cscoveredemployee_model" schemaLocation="cscoveredemployee_model.xsd"/>
+      <xs:import namespace="http://guidewire.com/pc/gx/compsource.pc.api.payrollreport.gx.csauditinformationdetails_model" schemaLocation="csauditinformationdetails_model.xsd"/>
+      <xs:import namespace="http://guidewire.com/pc/gx/compsource.pc.api.payrollreport.gx.csauditinformation_model" schemaLocation="csauditinformation_model.xsd"/>
+      <xs:import namespace="http://guidewire.com/pc/gx/compsource.pc.api.payrollreport.gx.cspolicyperiod_model" schemaLocation="cspolicyperiod_model.xsd"/>
+      <!--findPolicyNumbers(String) : List<String>-->
+      <xs:element name="findPolicyNumbers">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="accountNumber" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="findPolicyNumbersResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="list" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Entry" type="xs:string" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RequiredFieldException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="SOAPException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="XmlException">
+        <xs:complexType/>
+      </xs:element>
+      <!--findPolicyInformation(String) : CSPolicyPeriod-->
+      <xs:element name="findPolicyInformation">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="policyNumber" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="findPolicyInformationResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element ref="imported:CSPolicyPeriod"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--findPolicyStartAndEndDates(String) : List<Date>-->
+      <xs:element name="findPolicyStartAndEndDates">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="policyNumber" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="findPolicyStartAndEndDatesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="list" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Entry" type="xs:dateTime" gw:type="java.util.Date" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--policyDateIsValid(String, String) : Boolean-->
+      <xs:element name="policyDateIsValid">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="policyNumber" type="xs:string" minOccurs="0"/>
+            <xs:element name="fnoiDate" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="policyDateIsValidResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--findAuditInformations(String, Boolean) : List<CSAuditInformation>-->
+      <xs:element name="findAuditInformations">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="policyNumber" type="xs:string" minOccurs="0"/>
+            <xs:element name="includeFinalAudits" type="xs:boolean" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="findAuditInformationsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="list" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Entry" nillable="true">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element ref="imported2:CSAuditInformation"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--findAuditInformationDetails(String) : CSAuditInformationDetails-->
+      <xs:element name="findAuditInformationDetails">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="auditInformationPublicId" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="findAuditInformationDetailsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element ref="imported3:CSAuditInformationDetails"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AuditHasBeenStartedException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="NoResultsFoundException">
+        <xs:complexType/>
+      </xs:element>
+      <!--updateCoveredEmployee(String, Long, Integer)-->
+      <xs:element name="updateCoveredEmployee">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="auditInformationPublicId" type="xs:string" minOccurs="0"/>
+            <xs:element name="coveredEmployeeFixedId" type="xs:long" minOccurs="0"/>
+            <xs:element name="auditedAmount" type="xs:int" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateCoveredEmployeeResponse">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="AuditIsCompleteException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="AuditIsEditableException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="AuditIsWaivedException">
+        <xs:complexType/>
+      </xs:element>
+      <!--updateCoveredEmployees(String, List<CSCoveredEmployee>)-->
+      <xs:element name="updateCoveredEmployees">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="auditInformationPublicId" type="xs:string" minOccurs="0"/>
+            <xs:element name="coveredEmployees" minOccurs="0" gw:viewas="list" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Entry" nillable="true">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element ref="imported4:CSCoveredEmployee"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateCoveredEmployeesResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!--updateCoveredEmployeesAndCalculatePremiums(String, List<CSCoveredEmployee>, String) : CSUpdateCoveredEmployeeResponse-->
+      <xs:element name="updateCoveredEmployeesAndCalculatePremiums">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="auditInformationPublicId" type="xs:string" minOccurs="0"/>
+            <xs:element name="coveredEmployees" minOccurs="0" gw:viewas="list" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Entry" nillable="true">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element ref="imported4:CSCoveredEmployee"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="description" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateCoveredEmployeesAndCalculatePremiumsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element ref="imported5:CSUpdateCoveredEmployeeResponse"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AuditCanRequestQuoteException">
+        <xs:complexType/>
+      </xs:element>
+      <!--updateCoveredEmployeesAndCompleteAuditProcess(String, List<CSCoveredEmployee>, String) : CSUpdateCoveredEmployeeResponse-->
+      <xs:element name="updateCoveredEmployeesAndCompleteAuditProcess">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="auditInformationPublicId" type="xs:string" minOccurs="0"/>
+            <xs:element name="coveredEmployees" minOccurs="0" gw:viewas="list" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Entry" nillable="true">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element ref="imported4:CSCoveredEmployee"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="description" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateCoveredEmployeesAndCompleteAuditProcessResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element ref="imported5:CSUpdateCoveredEmployeeResponse"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AuditCanCompleteException">
+        <xs:complexType/>
+      </xs:element>
+      <!--updateAuditInformationDetails(String, List<CSCoveredEmployee>, List<CSSupplDiseaseExposure>, String, String, Boolean, Boolean) : CSPremiumDetails-->
+      <xs:element name="updateAuditInformationDetails">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="auditInformationPublicId" type="xs:string" minOccurs="0"/>
+            <xs:element name="coveredEmployees" minOccurs="0" gw:viewas="list" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Entry" nillable="true">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element ref="imported4:CSCoveredEmployee"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="supplDiseaseExposures" minOccurs="0" gw:viewas="list" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Entry" nillable="true">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element ref="imported6:CSSupplDiseaseExposure"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="auditMethod" type="xs:string" minOccurs="0"/>
+            <xs:element name="auditDescription" type="xs:string" minOccurs="0"/>
+            <xs:element name="requestQuote" type="xs:boolean" minOccurs="0"/>
+            <xs:element name="completeAudit" type="xs:boolean" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateAuditInformationDetailsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element ref="imported7:CSPremiumDetails"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--calculatePremiums(String) : BigDecimal-->
+      <xs:element name="calculatePremiums">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="auditInformationPublicId" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="calculatePremiumsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:decimal" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--requestQuote(String) : CSPremiumDetails-->
+      <xs:element name="requestQuote">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="auditInformationPublicId" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="requestQuoteResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element ref="imported7:CSPremiumDetails"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--completeAuditProcess(String)-->
+      <xs:element name="completeAuditProcess">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="auditInformationPublicId" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="completeAuditProcessResponse">
+        <xs:complexType/>
+      </xs:element>
+      <!--completeAudit(String)-->
+      <xs:element name="completeAudit">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="auditInformationPublicId" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="completeAuditResponse">
+        <xs:complexType/>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:portType name="PayrollReportAPIPortType">
+    <wsdl:operation name="findPolicyNumbers">
+      <wsdl:input name="findPolicyNumbers" message="findPolicyNumbers"/>
+      <wsdl:output name="findPolicyNumbersResponse" message="findPolicyNumbersResponse"/>
+      <!--if arguments are null-->
+      <wsdl:fault name="RequiredFieldException" message="RequiredFieldException"/>
+      <!--If a communication errors occurs-->
+      <wsdl:fault name="SOAPException" message="SOAPException"/>
+      <!--If an XML parse error occurs-->
+      <wsdl:fault name="XmlException" message="XmlException"/>
+    </wsdl:operation>
+    <wsdl:operation name="findPolicyInformation">
+      <wsdl:input name="findPolicyInformation" message="findPolicyInformation"/>
+      <wsdl:output name="findPolicyInformationResponse" message="findPolicyInformationResponse"/>
+      <!--if arguments are null-->
+      <wsdl:fault name="RequiredFieldException" message="RequiredFieldException"/>
+      <!--If a communication errors occurs-->
+      <wsdl:fault name="SOAPException" message="SOAPException"/>
+      <!--If an XML parse error occurs-->
+      <wsdl:fault name="XmlException" message="XmlException"/>
+    </wsdl:operation>
+    <wsdl:operation name="findPolicyStartAndEndDates">
+      <wsdl:input name="findPolicyStartAndEndDates" message="findPolicyStartAndEndDates"/>
+      <wsdl:output name="findPolicyStartAndEndDatesResponse" message="findPolicyStartAndEndDatesResponse"/>
+      <!--if arguments are null-->
+      <wsdl:fault name="RequiredFieldException" message="RequiredFieldException"/>
+      <!--If a communication errors occurs-->
+      <wsdl:fault name="SOAPException" message="SOAPException"/>
+      <!--If an XML parse error occurs-->
+      <wsdl:fault name="XmlException" message="XmlException"/>
+    </wsdl:operation>
+    <wsdl:operation name="policyDateIsValid">
+      <wsdl:input name="policyDateIsValid" message="policyDateIsValid"/>
+      <wsdl:output name="policyDateIsValidResponse" message="policyDateIsValidResponse"/>
+      <!--if arguments are null-->
+      <wsdl:fault name="RequiredFieldException" message="RequiredFieldException"/>
+      <!--If a communication errors occurs-->
+      <wsdl:fault name="SOAPException" message="SOAPException"/>
+      <!--If an XML parse error occurs-->
+      <wsdl:fault name="XmlException" message="XmlException"/>
+    </wsdl:operation>
+    <wsdl:operation name="findAuditInformations">
+      <wsdl:input name="findAuditInformations" message="findAuditInformations"/>
+      <wsdl:output name="findAuditInformationsResponse" message="findAuditInformationsResponse"/>
+      <!--if arguments are null-->
+      <wsdl:fault name="RequiredFieldException" message="RequiredFieldException"/>
+      <!--If a communication errors occurs-->
+      <wsdl:fault name="SOAPException" message="SOAPException"/>
+      <!--If an XML parse error occurs-->
+      <wsdl:fault name="XmlException" message="XmlException"/>
+    </wsdl:operation>
+    <wsdl:operation name="findAuditInformationDetails">
+      <wsdl:input name="findAuditInformationDetails" message="findAuditInformationDetails"/>
+      <wsdl:output name="findAuditInformationDetailsResponse" message="findAuditInformationDetailsResponse"/>
+      <!--if arguments are null-->
+      <wsdl:fault name="RequiredFieldException" message="RequiredFieldException"/>
+      <!--If a communication errors occurs-->
+      <wsdl:fault name="SOAPException" message="SOAPException"/>
+      <!--If an XML parse error occurs-->
+      <wsdl:fault name="XmlException" message="XmlException"/>
+      <!--if the audit has not been started-->
+      <wsdl:fault name="AuditHasBeenStartedException" message="AuditHasBeenStartedException"/>
+      <!--if no results found-->
+      <wsdl:fault name="NoResultsFoundException" message="NoResultsFoundException"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateCoveredEmployee">
+      <wsdl:documentation>@deprecated: Replaced by updateAuditInformationDetails.</wsdl:documentation>
+      <wsdl:input name="updateCoveredEmployee" message="updateCoveredEmployee"/>
+      <wsdl:output name="updateCoveredEmployeeResponse" message="updateCoveredEmployeeResponse"/>
+      <!--if arguments are null-->
+      <wsdl:fault name="RequiredFieldException" message="RequiredFieldException"/>
+      <!--If a communication errors occurs-->
+      <wsdl:fault name="SOAPException" message="SOAPException"/>
+      <!--If an XML parse error occurs-->
+      <wsdl:fault name="XmlException" message="XmlException"/>
+      <!--if the audit has not been started-->
+      <wsdl:fault name="AuditHasBeenStartedException" message="AuditHasBeenStartedException"/>
+      <!--if the audit has already been completed-->
+      <wsdl:fault name="AuditIsCompleteException" message="AuditIsCompleteException"/>
+      <!--if the audit is uneditable-->
+      <wsdl:fault name="AuditIsEditableException" message="AuditIsEditableException"/>
+      <!--if the audit has been waived-->
+      <wsdl:fault name="AuditIsWaivedException" message="AuditIsWaivedException"/>
+      <!--if no results found-->
+      <wsdl:fault name="NoResultsFoundException" message="NoResultsFoundException"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateCoveredEmployees">
+      <wsdl:documentation>@deprecated: Replaced by updateAuditInformationDetails.</wsdl:documentation>
+      <wsdl:input name="updateCoveredEmployees" message="updateCoveredEmployees"/>
+      <wsdl:output name="updateCoveredEmployeesResponse" message="updateCoveredEmployeesResponse"/>
+      <!--if arguments are null-->
+      <wsdl:fault name="RequiredFieldException" message="RequiredFieldException"/>
+      <!--If a communication errors occurs-->
+      <wsdl:fault name="SOAPException" message="SOAPException"/>
+      <!--If an XML parse error occurs-->
+      <wsdl:fault name="XmlException" message="XmlException"/>
+      <!--if the audit has not been started-->
+      <wsdl:fault name="AuditHasBeenStartedException" message="AuditHasBeenStartedException"/>
+      <!--if the audit has already been completed-->
+      <wsdl:fault name="AuditIsCompleteException" message="AuditIsCompleteException"/>
+      <!--if the audit is uneditable-->
+      <wsdl:fault name="AuditIsEditableException" message="AuditIsEditableException"/>
+      <!--if the audit has been waived-->
+      <wsdl:fault name="AuditIsWaivedException" message="AuditIsWaivedException"/>
+      <!--if no results found-->
+      <wsdl:fault name="NoResultsFoundException" message="NoResultsFoundException"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateCoveredEmployeesAndCalculatePremiums">
+      <wsdl:documentation>@deprecated: Replaced by updateAuditInformationDetails.</wsdl:documentation>
+      <wsdl:input name="updateCoveredEmployeesAndCalculatePremiums" message="updateCoveredEmployeesAndCalculatePremiums"/>
+      <wsdl:output name="updateCoveredEmployeesAndCalculatePremiumsResponse" message="updateCoveredEmployeesAndCalculatePremiumsResponse"/>
+      <!--if arguments are null-->
+      <wsdl:fault name="RequiredFieldException" message="RequiredFieldException"/>
+      <!--If a communication errors occurs-->
+      <wsdl:fault name="SOAPException" message="SOAPException"/>
+      <!--If an XML parse error occurs-->
+      <wsdl:fault name="XmlException" message="XmlException"/>
+      <!--if unable to request a quote-->
+      <wsdl:fault name="AuditCanRequestQuoteException" message="AuditCanRequestQuoteException"/>
+      <!--if the audit has not been started-->
+      <wsdl:fault name="AuditHasBeenStartedException" message="AuditHasBeenStartedException"/>
+      <!--if the audit has already been completed and is uneditable-->
+      <wsdl:fault name="AuditIsCompleteException" message="AuditIsCompleteException"/>
+      <!--if the audit is uneditable-->
+      <wsdl:fault name="AuditIsEditableException" message="AuditIsEditableException"/>
+      <!--if the audit has been waived-->
+      <wsdl:fault name="AuditIsWaivedException" message="AuditIsWaivedException"/>
+      <!--if no results found-->
+      <wsdl:fault name="NoResultsFoundException" message="NoResultsFoundException"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateCoveredEmployeesAndCompleteAuditProcess">
+      <wsdl:documentation>@deprecated: Replaced by updateAuditInformationDetails.</wsdl:documentation>
+      <wsdl:input name="updateCoveredEmployeesAndCompleteAuditProcess" message="updateCoveredEmployeesAndCompleteAuditProcess"/>
+      <wsdl:output name="updateCoveredEmployeesAndCompleteAuditProcessResponse" message="updateCoveredEmployeesAndCompleteAuditProcessResponse"/>
+      <!--if arguments are null-->
+      <wsdl:fault name="RequiredFieldException" message="RequiredFieldException"/>
+      <!--If a communication errors occurs-->
+      <wsdl:fault name="SOAPException" message="SOAPException"/>
+      <!--If an XML parse error occurs-->
+      <wsdl:fault name="XmlException" message="XmlException"/>
+      <!--if the audit cannot be completed-->
+      <wsdl:fault name="AuditCanCompleteException" message="AuditCanCompleteException"/>
+      <!--if unable to request a quote-->
+      <wsdl:fault name="AuditCanRequestQuoteException" message="AuditCanRequestQuoteException"/>
+      <!--if the audit has not been started-->
+      <wsdl:fault name="AuditHasBeenStartedException" message="AuditHasBeenStartedException"/>
+      <!--if the audit has already been completed and is uneditable-->
+      <wsdl:fault name="AuditIsCompleteException" message="AuditIsCompleteException"/>
+      <!--if the audit is uneditable-->
+      <wsdl:fault name="AuditIsEditableException" message="AuditIsEditableException"/>
+      <!--if the audit has been waived-->
+      <wsdl:fault name="AuditIsWaivedException" message="AuditIsWaivedException"/>
+      <!--if no results found-->
+      <wsdl:fault name="NoResultsFoundException" message="NoResultsFoundException"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateAuditInformationDetails">
+      <wsdl:input name="updateAuditInformationDetails" message="updateAuditInformationDetails"/>
+      <wsdl:output name="updateAuditInformationDetailsResponse" message="updateAuditInformationDetailsResponse"/>
+      <!--if arguments are null-->
+      <wsdl:fault name="RequiredFieldException" message="RequiredFieldException"/>
+      <!--If a communication errors occurs-->
+      <wsdl:fault name="SOAPException" message="SOAPException"/>
+      <!--If an XML parse error occurs-->
+      <wsdl:fault name="XmlException" message="XmlException"/>
+      <!--if unable to request a quote-->
+      <wsdl:fault name="AuditCanRequestQuoteException" message="AuditCanRequestQuoteException"/>
+      <!--if the audit cannot be completed-->
+      <wsdl:fault name="AuditCanCompleteException" message="AuditCanCompleteException"/>
+      <!--if the audit has not been started-->
+      <wsdl:fault name="AuditHasBeenStartedException" message="AuditHasBeenStartedException"/>
+      <!--if the audit has already been completed and is uneditable-->
+      <wsdl:fault name="AuditIsCompleteException" message="AuditIsCompleteException"/>
+      <!--if the audit is uneditable-->
+      <wsdl:fault name="AuditIsEditableException" message="AuditIsEditableException"/>
+      <!--if the audit has been waived-->
+      <wsdl:fault name="AuditIsWaivedException" message="AuditIsWaivedException"/>
+      <!--if no results found-->
+      <wsdl:fault name="NoResultsFoundException" message="NoResultsFoundException"/>
+    </wsdl:operation>
+    <wsdl:operation name="calculatePremiums">
+      <wsdl:documentation>@deprecated: Replaced by requestQuote.</wsdl:documentation>
+      <wsdl:input name="calculatePremiums" message="calculatePremiums"/>
+      <wsdl:output name="calculatePremiumsResponse" message="calculatePremiumsResponse"/>
+      <!--if arguments are null-->
+      <wsdl:fault name="RequiredFieldException" message="RequiredFieldException"/>
+      <!--If a communication errors occurs-->
+      <wsdl:fault name="SOAPException" message="SOAPException"/>
+      <!--If an XML parse error occurs-->
+      <wsdl:fault name="XmlException" message="XmlException"/>
+      <!--if unable to request a quote-->
+      <wsdl:fault name="AuditCanRequestQuoteException" message="AuditCanRequestQuoteException"/>
+      <!--if the audit has not been started-->
+      <wsdl:fault name="AuditHasBeenStartedException" message="AuditHasBeenStartedException"/>
+      <!--if the audit has already been completed and is uneditable-->
+      <wsdl:fault name="AuditIsCompleteException" message="AuditIsCompleteException"/>
+      <!--if the audit is uneditable-->
+      <wsdl:fault name="AuditIsEditableException" message="AuditIsEditableException"/>
+      <!--if the audit has been waived-->
+      <wsdl:fault name="AuditIsWaivedException" message="AuditIsWaivedException"/>
+      <!--if no results found-->
+      <wsdl:fault name="NoResultsFoundException" message="NoResultsFoundException"/>
+    </wsdl:operation>
+    <wsdl:operation name="requestQuote">
+      <wsdl:input name="requestQuote" message="requestQuote"/>
+      <wsdl:output name="requestQuoteResponse" message="requestQuoteResponse"/>
+      <!--if arguments are null-->
+      <wsdl:fault name="RequiredFieldException" message="RequiredFieldException"/>
+      <!--If a communication errors occurs-->
+      <wsdl:fault name="SOAPException" message="SOAPException"/>
+      <!--If an XML parse error occurs-->
+      <wsdl:fault name="XmlException" message="XmlException"/>
+      <!--if unable to request a quote-->
+      <wsdl:fault name="AuditCanRequestQuoteException" message="AuditCanRequestQuoteException"/>
+      <!--if the audit has not been started-->
+      <wsdl:fault name="AuditHasBeenStartedException" message="AuditHasBeenStartedException"/>
+      <!--if the audit has already been completed and is uneditable-->
+      <wsdl:fault name="AuditIsCompleteException" message="AuditIsCompleteException"/>
+      <!--if the audit is uneditable-->
+      <wsdl:fault name="AuditIsEditableException" message="AuditIsEditableException"/>
+      <!--if the audit has been waived-->
+      <wsdl:fault name="AuditIsWaivedException" message="AuditIsWaivedException"/>
+      <!--if no results found-->
+      <wsdl:fault name="NoResultsFoundException" message="NoResultsFoundException"/>
+    </wsdl:operation>
+    <wsdl:operation name="completeAuditProcess">
+      <wsdl:documentation>@deprecated: Replaced by completeAudit.</wsdl:documentation>
+      <wsdl:input name="completeAuditProcess" message="completeAuditProcess"/>
+      <wsdl:output name="completeAuditProcessResponse" message="completeAuditProcessResponse"/>
+      <!--if arguments are null-->
+      <wsdl:fault name="RequiredFieldException" message="RequiredFieldException"/>
+      <!--If a communication errors occurs-->
+      <wsdl:fault name="SOAPException" message="SOAPException"/>
+      <!--If an XML parse error occurs-->
+      <wsdl:fault name="XmlException" message="XmlException"/>
+      <!--if the audit cannot be completed-->
+      <wsdl:fault name="AuditCanCompleteException" message="AuditCanCompleteException"/>
+      <!--if the audit has already been completed and is uneditable-->
+      <wsdl:fault name="AuditIsCompleteException" message="AuditIsCompleteException"/>
+      <!--if the audit has been waived-->
+      <wsdl:fault name="AuditIsWaivedException" message="AuditIsWaivedException"/>
+      <!--if the audit has not been quoted-->
+      <wsdl:fault name="AuditCanRequestQuoteException" message="AuditCanRequestQuoteException"/>
+      <!--if the audit has not been started-->
+      <wsdl:fault name="AuditHasBeenStartedException" message="AuditHasBeenStartedException"/>
+      <!--if the audit is uneditable-->
+      <wsdl:fault name="AuditIsEditableException" message="AuditIsEditableException"/>
+      <!--if no results found-->
+      <wsdl:fault name="NoResultsFoundException" message="NoResultsFoundException"/>
+    </wsdl:operation>
+    <wsdl:operation name="completeAudit">
+      <wsdl:input name="completeAudit" message="completeAudit"/>
+      <wsdl:output name="completeAuditResponse" message="completeAuditResponse"/>
+      <!--if arguments are null-->
+      <wsdl:fault name="RequiredFieldException" message="RequiredFieldException"/>
+      <!--If a communication errors occurs-->
+      <wsdl:fault name="SOAPException" message="SOAPException"/>
+      <!--If an XML parse error occurs-->
+      <wsdl:fault name="XmlException" message="XmlException"/>
+      <!--if the audit cannot be completed-->
+      <wsdl:fault name="AuditCanCompleteException" message="AuditCanCompleteException"/>
+      <!--if the audit has already been completed and is uneditable-->
+      <wsdl:fault name="AuditIsCompleteException" message="AuditIsCompleteException"/>
+      <!--if the audit has been waived-->
+      <wsdl:fault name="AuditIsWaivedException" message="AuditIsWaivedException"/>
+      <!--if the audit has not been quoted-->
+      <wsdl:fault name="AuditCanRequestQuoteException" message="AuditCanRequestQuoteException"/>
+      <!--if the audit has not been started-->
+      <wsdl:fault name="AuditHasBeenStartedException" message="AuditHasBeenStartedException"/>
+      <!--if the audit is uneditable-->
+      <wsdl:fault name="AuditIsEditableException" message="AuditIsEditableException"/>
+      <!--if no results found-->
+      <wsdl:fault name="NoResultsFoundException" message="NoResultsFoundException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PayrollReportAPISoap12Binding" type="PayrollReportAPIPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="findPolicyNumbers">
+      <soap12:operation style="document"/>
+      <wsdl:input name="findPolicyNumbers">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findPolicyNumbersResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap12:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findPolicyInformation">
+      <soap12:operation style="document"/>
+      <wsdl:input name="findPolicyInformation">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findPolicyInformationResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap12:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findPolicyStartAndEndDates">
+      <soap12:operation style="document"/>
+      <wsdl:input name="findPolicyStartAndEndDates">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findPolicyStartAndEndDatesResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap12:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="policyDateIsValid">
+      <soap12:operation style="document"/>
+      <wsdl:input name="policyDateIsValid">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="policyDateIsValidResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap12:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findAuditInformations">
+      <soap12:operation style="document"/>
+      <wsdl:input name="findAuditInformations">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findAuditInformationsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap12:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findAuditInformationDetails">
+      <soap12:operation style="document"/>
+      <wsdl:input name="findAuditInformationDetails">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findAuditInformationDetailsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap12:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditHasBeenStartedException">
+        <soap12:fault name="AuditHasBeenStartedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NoResultsFoundException">
+        <soap12:fault name="NoResultsFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateCoveredEmployee">
+      <soap12:operation style="document"/>
+      <wsdl:input name="updateCoveredEmployee">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateCoveredEmployeeResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap12:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditHasBeenStartedException">
+        <soap12:fault name="AuditHasBeenStartedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsCompleteException">
+        <soap12:fault name="AuditIsCompleteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsEditableException">
+        <soap12:fault name="AuditIsEditableException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsWaivedException">
+        <soap12:fault name="AuditIsWaivedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NoResultsFoundException">
+        <soap12:fault name="NoResultsFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateCoveredEmployees">
+      <soap12:operation style="document"/>
+      <wsdl:input name="updateCoveredEmployees">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateCoveredEmployeesResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap12:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditHasBeenStartedException">
+        <soap12:fault name="AuditHasBeenStartedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsCompleteException">
+        <soap12:fault name="AuditIsCompleteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsEditableException">
+        <soap12:fault name="AuditIsEditableException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsWaivedException">
+        <soap12:fault name="AuditIsWaivedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NoResultsFoundException">
+        <soap12:fault name="NoResultsFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateCoveredEmployeesAndCalculatePremiums">
+      <soap12:operation style="document"/>
+      <wsdl:input name="updateCoveredEmployeesAndCalculatePremiums">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateCoveredEmployeesAndCalculatePremiumsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap12:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditCanRequestQuoteException">
+        <soap12:fault name="AuditCanRequestQuoteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditHasBeenStartedException">
+        <soap12:fault name="AuditHasBeenStartedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsCompleteException">
+        <soap12:fault name="AuditIsCompleteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsEditableException">
+        <soap12:fault name="AuditIsEditableException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsWaivedException">
+        <soap12:fault name="AuditIsWaivedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NoResultsFoundException">
+        <soap12:fault name="NoResultsFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateCoveredEmployeesAndCompleteAuditProcess">
+      <soap12:operation style="document"/>
+      <wsdl:input name="updateCoveredEmployeesAndCompleteAuditProcess">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateCoveredEmployeesAndCompleteAuditProcessResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap12:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditCanCompleteException">
+        <soap12:fault name="AuditCanCompleteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditCanRequestQuoteException">
+        <soap12:fault name="AuditCanRequestQuoteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditHasBeenStartedException">
+        <soap12:fault name="AuditHasBeenStartedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsCompleteException">
+        <soap12:fault name="AuditIsCompleteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsEditableException">
+        <soap12:fault name="AuditIsEditableException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsWaivedException">
+        <soap12:fault name="AuditIsWaivedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NoResultsFoundException">
+        <soap12:fault name="NoResultsFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateAuditInformationDetails">
+      <soap12:operation style="document"/>
+      <wsdl:input name="updateAuditInformationDetails">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateAuditInformationDetailsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap12:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditCanRequestQuoteException">
+        <soap12:fault name="AuditCanRequestQuoteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditCanCompleteException">
+        <soap12:fault name="AuditCanCompleteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditHasBeenStartedException">
+        <soap12:fault name="AuditHasBeenStartedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsCompleteException">
+        <soap12:fault name="AuditIsCompleteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsEditableException">
+        <soap12:fault name="AuditIsEditableException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsWaivedException">
+        <soap12:fault name="AuditIsWaivedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NoResultsFoundException">
+        <soap12:fault name="NoResultsFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="calculatePremiums">
+      <soap12:operation style="document"/>
+      <wsdl:input name="calculatePremiums">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="calculatePremiumsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap12:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditCanRequestQuoteException">
+        <soap12:fault name="AuditCanRequestQuoteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditHasBeenStartedException">
+        <soap12:fault name="AuditHasBeenStartedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsCompleteException">
+        <soap12:fault name="AuditIsCompleteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsEditableException">
+        <soap12:fault name="AuditIsEditableException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsWaivedException">
+        <soap12:fault name="AuditIsWaivedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NoResultsFoundException">
+        <soap12:fault name="NoResultsFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="requestQuote">
+      <soap12:operation style="document"/>
+      <wsdl:input name="requestQuote">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="requestQuoteResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap12:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditCanRequestQuoteException">
+        <soap12:fault name="AuditCanRequestQuoteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditHasBeenStartedException">
+        <soap12:fault name="AuditHasBeenStartedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsCompleteException">
+        <soap12:fault name="AuditIsCompleteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsEditableException">
+        <soap12:fault name="AuditIsEditableException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsWaivedException">
+        <soap12:fault name="AuditIsWaivedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NoResultsFoundException">
+        <soap12:fault name="NoResultsFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="completeAuditProcess">
+      <soap12:operation style="document"/>
+      <wsdl:input name="completeAuditProcess">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="completeAuditProcessResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap12:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditCanCompleteException">
+        <soap12:fault name="AuditCanCompleteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsCompleteException">
+        <soap12:fault name="AuditIsCompleteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsWaivedException">
+        <soap12:fault name="AuditIsWaivedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditCanRequestQuoteException">
+        <soap12:fault name="AuditCanRequestQuoteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditHasBeenStartedException">
+        <soap12:fault name="AuditHasBeenStartedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsEditableException">
+        <soap12:fault name="AuditIsEditableException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NoResultsFoundException">
+        <soap12:fault name="NoResultsFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="completeAudit">
+      <soap12:operation style="document"/>
+      <wsdl:input name="completeAudit">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="completeAuditResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap12:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditCanCompleteException">
+        <soap12:fault name="AuditCanCompleteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsCompleteException">
+        <soap12:fault name="AuditIsCompleteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsWaivedException">
+        <soap12:fault name="AuditIsWaivedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditCanRequestQuoteException">
+        <soap12:fault name="AuditCanRequestQuoteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditHasBeenStartedException">
+        <soap12:fault name="AuditHasBeenStartedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsEditableException">
+        <soap12:fault name="AuditIsEditableException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NoResultsFoundException">
+        <soap12:fault name="NoResultsFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PayrollReportAPISoap11Binding" type="PayrollReportAPIPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="findPolicyNumbers">
+      <soap11:operation style="document"/>
+      <wsdl:input name="findPolicyNumbers">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findPolicyNumbersResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap11:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findPolicyInformation">
+      <soap11:operation style="document"/>
+      <wsdl:input name="findPolicyInformation">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findPolicyInformationResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap11:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findPolicyStartAndEndDates">
+      <soap11:operation style="document"/>
+      <wsdl:input name="findPolicyStartAndEndDates">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findPolicyStartAndEndDatesResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap11:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="policyDateIsValid">
+      <soap11:operation style="document"/>
+      <wsdl:input name="policyDateIsValid">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="policyDateIsValidResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap11:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findAuditInformations">
+      <soap11:operation style="document"/>
+      <wsdl:input name="findAuditInformations">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findAuditInformationsResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap11:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findAuditInformationDetails">
+      <soap11:operation style="document"/>
+      <wsdl:input name="findAuditInformationDetails">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findAuditInformationDetailsResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap11:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditHasBeenStartedException">
+        <soap11:fault name="AuditHasBeenStartedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NoResultsFoundException">
+        <soap11:fault name="NoResultsFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateCoveredEmployee">
+      <soap11:operation style="document"/>
+      <wsdl:input name="updateCoveredEmployee">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateCoveredEmployeeResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap11:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditHasBeenStartedException">
+        <soap11:fault name="AuditHasBeenStartedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsCompleteException">
+        <soap11:fault name="AuditIsCompleteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsEditableException">
+        <soap11:fault name="AuditIsEditableException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsWaivedException">
+        <soap11:fault name="AuditIsWaivedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NoResultsFoundException">
+        <soap11:fault name="NoResultsFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateCoveredEmployees">
+      <soap11:operation style="document"/>
+      <wsdl:input name="updateCoveredEmployees">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateCoveredEmployeesResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap11:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditHasBeenStartedException">
+        <soap11:fault name="AuditHasBeenStartedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsCompleteException">
+        <soap11:fault name="AuditIsCompleteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsEditableException">
+        <soap11:fault name="AuditIsEditableException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsWaivedException">
+        <soap11:fault name="AuditIsWaivedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NoResultsFoundException">
+        <soap11:fault name="NoResultsFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateCoveredEmployeesAndCalculatePremiums">
+      <soap11:operation style="document"/>
+      <wsdl:input name="updateCoveredEmployeesAndCalculatePremiums">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateCoveredEmployeesAndCalculatePremiumsResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap11:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditCanRequestQuoteException">
+        <soap11:fault name="AuditCanRequestQuoteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditHasBeenStartedException">
+        <soap11:fault name="AuditHasBeenStartedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsCompleteException">
+        <soap11:fault name="AuditIsCompleteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsEditableException">
+        <soap11:fault name="AuditIsEditableException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsWaivedException">
+        <soap11:fault name="AuditIsWaivedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NoResultsFoundException">
+        <soap11:fault name="NoResultsFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateCoveredEmployeesAndCompleteAuditProcess">
+      <soap11:operation style="document"/>
+      <wsdl:input name="updateCoveredEmployeesAndCompleteAuditProcess">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateCoveredEmployeesAndCompleteAuditProcessResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap11:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditCanCompleteException">
+        <soap11:fault name="AuditCanCompleteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditCanRequestQuoteException">
+        <soap11:fault name="AuditCanRequestQuoteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditHasBeenStartedException">
+        <soap11:fault name="AuditHasBeenStartedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsCompleteException">
+        <soap11:fault name="AuditIsCompleteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsEditableException">
+        <soap11:fault name="AuditIsEditableException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsWaivedException">
+        <soap11:fault name="AuditIsWaivedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NoResultsFoundException">
+        <soap11:fault name="NoResultsFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateAuditInformationDetails">
+      <soap11:operation style="document"/>
+      <wsdl:input name="updateAuditInformationDetails">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateAuditInformationDetailsResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap11:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditCanRequestQuoteException">
+        <soap11:fault name="AuditCanRequestQuoteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditCanCompleteException">
+        <soap11:fault name="AuditCanCompleteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditHasBeenStartedException">
+        <soap11:fault name="AuditHasBeenStartedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsCompleteException">
+        <soap11:fault name="AuditIsCompleteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsEditableException">
+        <soap11:fault name="AuditIsEditableException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsWaivedException">
+        <soap11:fault name="AuditIsWaivedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NoResultsFoundException">
+        <soap11:fault name="NoResultsFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="calculatePremiums">
+      <soap11:operation style="document"/>
+      <wsdl:input name="calculatePremiums">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="calculatePremiumsResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap11:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditCanRequestQuoteException">
+        <soap11:fault name="AuditCanRequestQuoteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditHasBeenStartedException">
+        <soap11:fault name="AuditHasBeenStartedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsCompleteException">
+        <soap11:fault name="AuditIsCompleteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsEditableException">
+        <soap11:fault name="AuditIsEditableException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsWaivedException">
+        <soap11:fault name="AuditIsWaivedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NoResultsFoundException">
+        <soap11:fault name="NoResultsFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="requestQuote">
+      <soap11:operation style="document"/>
+      <wsdl:input name="requestQuote">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="requestQuoteResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap11:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditCanRequestQuoteException">
+        <soap11:fault name="AuditCanRequestQuoteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditHasBeenStartedException">
+        <soap11:fault name="AuditHasBeenStartedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsCompleteException">
+        <soap11:fault name="AuditIsCompleteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsEditableException">
+        <soap11:fault name="AuditIsEditableException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsWaivedException">
+        <soap11:fault name="AuditIsWaivedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NoResultsFoundException">
+        <soap11:fault name="NoResultsFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="completeAuditProcess">
+      <soap11:operation style="document"/>
+      <wsdl:input name="completeAuditProcess">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="completeAuditProcessResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap11:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditCanCompleteException">
+        <soap11:fault name="AuditCanCompleteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsCompleteException">
+        <soap11:fault name="AuditIsCompleteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsWaivedException">
+        <soap11:fault name="AuditIsWaivedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditCanRequestQuoteException">
+        <soap11:fault name="AuditCanRequestQuoteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditHasBeenStartedException">
+        <soap11:fault name="AuditHasBeenStartedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsEditableException">
+        <soap11:fault name="AuditIsEditableException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NoResultsFoundException">
+        <soap11:fault name="NoResultsFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="completeAudit">
+      <soap11:operation style="document"/>
+      <wsdl:input name="completeAudit">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="completeAuditResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap11:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditCanCompleteException">
+        <soap11:fault name="AuditCanCompleteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsCompleteException">
+        <soap11:fault name="AuditIsCompleteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsWaivedException">
+        <soap11:fault name="AuditIsWaivedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditCanRequestQuoteException">
+        <soap11:fault name="AuditCanRequestQuoteException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditHasBeenStartedException">
+        <soap11:fault name="AuditHasBeenStartedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuditIsEditableException">
+        <soap11:fault name="AuditIsEditableException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NoResultsFoundException">
+        <soap11:fault name="NoResultsFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PayrollReportAPI">
+    <wsdl:port name="PayrollReportAPISoap12Port" binding="PayrollReportAPISoap12Binding">
+      <soap12:address location="http://localhost:8180/pc/ws/compsource/pc/api/payrollreport/PayrollReportAPI"/>
+      <gwwsdl:address location="${pc}/ws/compsource/pc/api/payrollreport/PayrollReportAPI"/>
+    </wsdl:port>
+    <wsdl:port name="PayrollReportAPISoap11Port" binding="PayrollReportAPISoap11Binding">
+      <soap11:address location="http://localhost:8180/pc/ws/compsource/pc/api/payrollreport/PayrollReportAPI/soap11"/>
+      <gwwsdl:address location="${pc}/ws/compsource/pc/api/payrollreport/PayrollReportAPI/soap11"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:message name="findPolicyNumbers">
+    <wsdl:part name="parameters" element="findPolicyNumbers"/>
+  </wsdl:message>
+  <wsdl:message name="findPolicyNumbersResponse">
+    <wsdl:part name="parameters" element="findPolicyNumbersResponse"/>
+  </wsdl:message>
+  <wsdl:message name="RequiredFieldException">
+    <wsdl:part name="RequiredFieldException" element="RequiredFieldException"/>
+  </wsdl:message>
+  <wsdl:message name="SOAPException">
+    <wsdl:part name="SOAPException" element="SOAPException"/>
+  </wsdl:message>
+  <wsdl:message name="XmlException">
+    <wsdl:part name="XmlException" element="XmlException"/>
+  </wsdl:message>
+  <wsdl:message name="findPolicyInformation">
+    <wsdl:part name="parameters" element="findPolicyInformation"/>
+  </wsdl:message>
+  <wsdl:message name="findPolicyInformationResponse">
+    <wsdl:part name="parameters" element="findPolicyInformationResponse"/>
+  </wsdl:message>
+  <wsdl:message name="findPolicyStartAndEndDates">
+    <wsdl:part name="parameters" element="findPolicyStartAndEndDates"/>
+  </wsdl:message>
+  <wsdl:message name="findPolicyStartAndEndDatesResponse">
+    <wsdl:part name="parameters" element="findPolicyStartAndEndDatesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="policyDateIsValid">
+    <wsdl:part name="parameters" element="policyDateIsValid"/>
+  </wsdl:message>
+  <wsdl:message name="policyDateIsValidResponse">
+    <wsdl:part name="parameters" element="policyDateIsValidResponse"/>
+  </wsdl:message>
+  <wsdl:message name="findAuditInformations">
+    <wsdl:part name="parameters" element="findAuditInformations"/>
+  </wsdl:message>
+  <wsdl:message name="findAuditInformationsResponse">
+    <wsdl:part name="parameters" element="findAuditInformationsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="findAuditInformationDetails">
+    <wsdl:part name="parameters" element="findAuditInformationDetails"/>
+  </wsdl:message>
+  <wsdl:message name="findAuditInformationDetailsResponse">
+    <wsdl:part name="parameters" element="findAuditInformationDetailsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AuditHasBeenStartedException">
+    <wsdl:part name="AuditHasBeenStartedException" element="AuditHasBeenStartedException"/>
+  </wsdl:message>
+  <wsdl:message name="NoResultsFoundException">
+    <wsdl:part name="NoResultsFoundException" element="NoResultsFoundException"/>
+  </wsdl:message>
+  <wsdl:message name="updateCoveredEmployee">
+    <wsdl:part name="parameters" element="updateCoveredEmployee"/>
+  </wsdl:message>
+  <wsdl:message name="updateCoveredEmployeeResponse">
+    <wsdl:part name="parameters" element="updateCoveredEmployeeResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AuditIsCompleteException">
+    <wsdl:part name="AuditIsCompleteException" element="AuditIsCompleteException"/>
+  </wsdl:message>
+  <wsdl:message name="AuditIsEditableException">
+    <wsdl:part name="AuditIsEditableException" element="AuditIsEditableException"/>
+  </wsdl:message>
+  <wsdl:message name="AuditIsWaivedException">
+    <wsdl:part name="AuditIsWaivedException" element="AuditIsWaivedException"/>
+  </wsdl:message>
+  <wsdl:message name="updateCoveredEmployees">
+    <wsdl:part name="parameters" element="updateCoveredEmployees"/>
+  </wsdl:message>
+  <wsdl:message name="updateCoveredEmployeesResponse">
+    <wsdl:part name="parameters" element="updateCoveredEmployeesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="updateCoveredEmployeesAndCalculatePremiums">
+    <wsdl:part name="parameters" element="updateCoveredEmployeesAndCalculatePremiums"/>
+  </wsdl:message>
+  <wsdl:message name="updateCoveredEmployeesAndCalculatePremiumsResponse">
+    <wsdl:part name="parameters" element="updateCoveredEmployeesAndCalculatePremiumsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AuditCanRequestQuoteException">
+    <wsdl:part name="AuditCanRequestQuoteException" element="AuditCanRequestQuoteException"/>
+  </wsdl:message>
+  <wsdl:message name="updateCoveredEmployeesAndCompleteAuditProcess">
+    <wsdl:part name="parameters" element="updateCoveredEmployeesAndCompleteAuditProcess"/>
+  </wsdl:message>
+  <wsdl:message name="updateCoveredEmployeesAndCompleteAuditProcessResponse">
+    <wsdl:part name="parameters" element="updateCoveredEmployeesAndCompleteAuditProcessResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AuditCanCompleteException">
+    <wsdl:part name="AuditCanCompleteException" element="AuditCanCompleteException"/>
+  </wsdl:message>
+  <wsdl:message name="updateAuditInformationDetails">
+    <wsdl:part name="parameters" element="updateAuditInformationDetails"/>
+  </wsdl:message>
+  <wsdl:message name="updateAuditInformationDetailsResponse">
+    <wsdl:part name="parameters" element="updateAuditInformationDetailsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="calculatePremiums">
+    <wsdl:part name="parameters" element="calculatePremiums"/>
+  </wsdl:message>
+  <wsdl:message name="calculatePremiumsResponse">
+    <wsdl:part name="parameters" element="calculatePremiumsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="requestQuote">
+    <wsdl:part name="parameters" element="requestQuote"/>
+  </wsdl:message>
+  <wsdl:message name="requestQuoteResponse">
+    <wsdl:part name="parameters" element="requestQuoteResponse"/>
+  </wsdl:message>
+  <wsdl:message name="completeAuditProcess">
+    <wsdl:part name="parameters" element="completeAuditProcess"/>
+  </wsdl:message>
+  <wsdl:message name="completeAuditProcessResponse">
+    <wsdl:part name="parameters" element="completeAuditProcessResponse"/>
+  </wsdl:message>
+  <wsdl:message name="completeAudit">
+    <wsdl:part name="parameters" element="completeAudit"/>
+  </wsdl:message>
+  <wsdl:message name="completeAuditResponse">
+    <wsdl:part name="parameters" element="completeAuditResponse"/>
+  </wsdl:message>
+  <wsdl:message name="gw-authentication">
+    <wsdl:part name="gw-authentication" element="gwsoap:authentication"/>
+  </wsdl:message>
+  <wsdl:message name="gw-locale">
+    <wsdl:part name="gw-locale" element="gwsoap:locale"/>
+  </wsdl:message>
+</wsdl:definitions>

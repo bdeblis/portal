@@ -1,0 +1,128 @@
+# SCHEMA "COMPSOURCEOK"
+dn: schema
+objectClass: top
+objectClass: ldapSubentry
+objectClass: subschema
+attributeTypes: ( 1.3.6.1.4.1.1234567.5.4.1
+  NAME 'csoContext'
+  DESC 'CompSource Context'
+  EQUALITY caseIgnoreMatch
+  SUBSTR caseIgnoreSubstringsMatch
+  SYNTAX '1.3.6.1.4.1.1466.115.121.1.15')
+attributeTypes: ( 1.3.6.1.4.1.1234567.5.4.2
+  NAME 'csoExtension'
+  DESC 'CompSource Extension'
+  EQUALITY caseIgnoreMatch
+  SUBSTR caseIgnoreSubstringsMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15)
+attributeTypes: ( 1.3.6.1.4.1.1234567.5.4.3
+  NAME 'csoChallengeQuestion'
+  DESC 'Challenge Question for password recovery e.g., mother maiden name'
+  EQUALITY caseIgnoreMatch
+  SUBSTR caseIgnoreSubstringsMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15)
+attributeTypes: ( 1.3.6.1.4.1.1234567.5.4.4
+  NAME 'csoChallengeAnswer'
+  DESC 'Answer to password recovery challenge question.'
+  EQUALITY caseIgnoreMatch
+  SUBSTR caseIgnoreSubstringsMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15)
+attributeTypes: ( 1.3.6.1.4.1.1234567.5.4.5
+  NAME 'csoAgencyNumber'
+  DESC 'The agency number'
+  EQUALITY caseIgnoreMatch
+  SUBSTR caseIgnoreSubstringsMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.27)
+attributeTypes: ( 1.3.6.1.4.1.1234567.5.4.6
+  NAME 'csoAgencyName'
+  DESC 'The agency name'
+  EQUALITY caseIgnoreMatch
+  SUBSTR caseIgnoreSubstringsMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15)
+attributeTypes: ( 1.3.6.1.4.1.1234567.5.4.7
+  NAME 'csoLastLogin'
+  DESC 'The last login date and time'
+  EQUALITY caseIgnoreMatch
+  SUBSTR caseIgnoreSubstringsMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15)
+attributeTypes: ( 1.3.6.1.4.1.1234567.5.4.8
+  NAME 'csoPolicyNumber'
+  DESC 'Policy Identifier for Policyholder Policy'
+  EQUALITY caseIgnoreMatch
+  SUBSTR caseIgnoreSubstringsMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15)
+attributeTypes: ( 1.3.6.1.4.1.1234567.5.4.9
+  NAME 'csoPhCompanyName'
+  DESC 'The Policyholder Company Name'
+  EQUALITY caseIgnoreMatch
+  SUBSTR caseIgnoreSubstringsMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15)
+attributeTypes: ( 1.3.6.1.4.1.1234567.5.4.10
+  NAME 'csoPcAccountId'
+  DESC 'The PolicyCenter Account ID'
+  EQUALITY caseIgnoreMatch
+  SUBSTR caseIgnoreSubstringsMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15)
+attributeTypes: ( 1.3.6.1.4.1.1234567.5.4.11
+  NAME 'csoOkGovUserId'
+  DESC 'The user ID returned by the ok gov payment processor'
+  EQUALITY caseIgnoreMatch
+  SUBSTR caseIgnoreSubstringsMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15)
+attributeTypes: ( 1.3.6.1.4.1.1234567.5.4.12
+  NAME 'csoPassChgSecurityToken'
+  DESC 'A secure token that is used to validate a change request'
+  EQUALITY caseIgnoreMatch
+  SUBSTR caseIgnoreSubstringMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15)
+attributeTypes: ( 1.3.6.1.4.1.1234567.5.4.13
+  NAME 'csoAccountLocked'
+  DESC 'Is this account locked?'
+  SINGLE-VALUE
+  EQUALITY booleanMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.7)
+attributeTypes: ( 1.3.6.1.4.1.1234567.5.4.14
+  NAME 'csoPassChgExpirDate'
+  DESC 'The expiration date of the password change security token'
+  SINGLE-VALUE
+  EQUALITY generalizedTimeMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.24)
+objectClasses: ( 1.3.6.1.4.1.1234567.5.2.1
+  NAME 'csoExtension'
+  DESC 'Extension information for CompSource'
+  SUP top
+  AUXILIARY
+  MUST cn
+    MAY ( csoContext $
+        csoExtension  ) )
+objectClasses: ( 1.3.6.1.4.1.1234567.5.2.2
+  NAME 'csoPerson'
+  DESC 'User Information for CompSource'
+  SUP top
+  AUXILIARY
+  MUST cn
+    MAY ( csoChallengeQuestion $
+          csoChallengeAnswer $
+          csoLastLogin $
+          csoPassChgSecurityToken $
+          csoAccountLocked $
+          csoPassChgExpirDate ) )
+objectClasses: ( 1.3.6.1.4.1.1234567.5.2.3
+  NAME 'csoPolicyholder'
+  DESC 'Policyholder User Information for CompSource'
+  SUP csoPerson
+  AUXILIARY
+  MUST cn
+    MAY ( csoPolicyNumber $
+          csoPhCompanyName $
+          csoPcAccountId $
+          csoOkGovUserId  ) )
+objectClasses: ( 1.3.6.1.4.1.1234567.5.2.4
+  NAME 'csoAgent'
+  DESC 'Agent User Information for CompSource'
+  SUP csoPerson
+  AUXILIARY
+  MUST cn
+    MAY ( csoAgencyNumber $
+          csoAgencyName  ) )
+

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<xsd:schema
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:gw="http://guidewire.com/xsd"
+      xmlns="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.policy.policylocationmodel"
+      targetNamespace="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.policy.policylocationmodel"
+      elementFormDefault="qualified"
+      xmlns:ns0="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.address.addressmodel">
+  <xsd:import
+        namespace="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.address.addressmodel" schemaLocation="../address/AddressModel.gx"/>
+  <xsd:element
+        name="PolicyLocation" type="PolicyLocation" nillable="true"/>
+  <xsd:complexType
+        name="PolicyLocation">
+    <xsd:sequence>
+      <xsd:element name="Address" minOccurs="0" nillable="true" type="ns0:Address"/>
+      <xsd:element name="LocationNumber" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

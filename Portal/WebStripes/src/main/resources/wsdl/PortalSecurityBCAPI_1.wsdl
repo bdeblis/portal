@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Generated WSDL for compsource.bc.api.portalauth.PortalSecurityAPI web service--><wsdl:definitions targetNamespace="http://example.com/compsource/bc/api/portalauth/PortalSecurityAPI" name="PortalSecurityAPI" xmlns="http://example.com/compsource/bc/api/portalauth/PortalSecurityAPI" xmlns:gwsoap="http://guidewire.com/ws/soapheaders" xmlns:gwwsdl="http://guidewire.com/pl/wsdl" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://example.com/compsource/bc/api/portalauth/PortalSecurityAPI" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/ws/soapheaders" schemaLocation="soapheaders.xsd"/>
+      <!--isUserValid(String) : boolean-->
+      <xs:element name="isUserValid">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="pUserName" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="isUserValidResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SOAPException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="UserNotFoundException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="UserAuthTypeInvalidException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="UserAlreadyRegisteredException">
+        <xs:complexType/>
+      </xs:element>
+      <!--getUserSharedSecret(String) : String-->
+      <xs:element name="getUserSharedSecret">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="pUserName" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getUserSharedSecretResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UserNotActiveException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="RegistrationNotCompleteException">
+        <xs:complexType/>
+      </xs:element>
+      <!--activatePortalUser(String)-->
+      <xs:element name="activatePortalUser">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="pUserName" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="activatePortalUserResponse">
+        <xs:complexType/>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:portType name="PortalSecurityAPIPortType">
+    <wsdl:operation name="isUserValid">
+      <wsdl:input name="isUserValid" message="isUserValid"/>
+      <wsdl:output name="isUserValidResponse" message="isUserValidResponse"/>
+      <!--If a communication errors occurs-->
+      <wsdl:fault name="SOAPException" message="SOAPException"/>
+      <!--User not found-->
+      <wsdl:fault name="UserNotFoundException" message="UserNotFoundException"/>
+      <!--User authentication type is invalid-->
+      <wsdl:fault name="UserAuthTypeInvalidException" message="UserAuthTypeInvalidException"/>
+      <!--User has already registered-->
+      <wsdl:fault name="UserAlreadyRegisteredException" message="UserAlreadyRegisteredException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getUserSharedSecret">
+      <wsdl:input name="getUserSharedSecret" message="getUserSharedSecret"/>
+      <wsdl:output name="getUserSharedSecretResponse" message="getUserSharedSecretResponse"/>
+      <!--If a communication errors occurs-->
+      <wsdl:fault name="SOAPException" message="SOAPException"/>
+      <!--User not found-->
+      <wsdl:fault name="UserNotFoundException" message="UserNotFoundException"/>
+      <!--User not active-->
+      <wsdl:fault name="UserNotActiveException" message="UserNotActiveException"/>
+      <!--User authentication type is invalid-->
+      <wsdl:fault name="UserAuthTypeInvalidException" message="UserAuthTypeInvalidException"/>
+      <!--Registration not complete-->
+      <wsdl:fault name="RegistrationNotCompleteException" message="RegistrationNotCompleteException"/>
+    </wsdl:operation>
+    <wsdl:operation name="activatePortalUser">
+      <wsdl:input name="activatePortalUser" message="activatePortalUser"/>
+      <wsdl:output name="activatePortalUserResponse" message="activatePortalUserResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PortalSecurityAPISoap12Binding" type="PortalSecurityAPIPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="isUserValid">
+      <soap12:operation style="document"/>
+      <wsdl:input name="isUserValid">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="isUserValidResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="UserNotFoundException">
+        <soap12:fault name="UserNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="UserAuthTypeInvalidException">
+        <soap12:fault name="UserAuthTypeInvalidException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="UserAlreadyRegisteredException">
+        <soap12:fault name="UserAlreadyRegisteredException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getUserSharedSecret">
+      <soap12:operation style="document"/>
+      <wsdl:input name="getUserSharedSecret">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUserSharedSecretResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="UserNotFoundException">
+        <soap12:fault name="UserNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="UserNotActiveException">
+        <soap12:fault name="UserNotActiveException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="UserAuthTypeInvalidException">
+        <soap12:fault name="UserAuthTypeInvalidException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RegistrationNotCompleteException">
+        <soap12:fault name="RegistrationNotCompleteException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="activatePortalUser">
+      <soap12:operation style="document"/>
+      <wsdl:input name="activatePortalUser">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="activatePortalUserResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PortalSecurityAPISoap11Binding" type="PortalSecurityAPIPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="isUserValid">
+      <soap11:operation style="document"/>
+      <wsdl:input name="isUserValid">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="isUserValidResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="UserNotFoundException">
+        <soap11:fault name="UserNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="UserAuthTypeInvalidException">
+        <soap11:fault name="UserAuthTypeInvalidException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="UserAlreadyRegisteredException">
+        <soap11:fault name="UserAlreadyRegisteredException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getUserSharedSecret">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getUserSharedSecret">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUserSharedSecretResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="UserNotFoundException">
+        <soap11:fault name="UserNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="UserNotActiveException">
+        <soap11:fault name="UserNotActiveException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="UserAuthTypeInvalidException">
+        <soap11:fault name="UserAuthTypeInvalidException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RegistrationNotCompleteException">
+        <soap11:fault name="RegistrationNotCompleteException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="activatePortalUser">
+      <soap11:operation style="document"/>
+      <wsdl:input name="activatePortalUser">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="activatePortalUserResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PortalSecurityAPI">
+    <wsdl:port name="PortalSecurityAPISoap12Port" binding="PortalSecurityAPISoap12Binding">
+      <soap12:address location="http://localhost:8580/bc/ws/compsource/bc/api/portalauth/PortalSecurityAPI"/>
+      <gwwsdl:address location="${bc}/ws/compsource/bc/api/portalauth/PortalSecurityAPI"/>
+    </wsdl:port>
+    <wsdl:port name="PortalSecurityAPISoap11Port" binding="PortalSecurityAPISoap11Binding">
+      <soap11:address location="http://localhost:8580/bc/ws/compsource/bc/api/portalauth/PortalSecurityAPI/soap11"/>
+      <gwwsdl:address location="${bc}/ws/compsource/bc/api/portalauth/PortalSecurityAPI/soap11"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:message name="isUserValid">
+    <wsdl:part name="parameters" element="isUserValid"/>
+  </wsdl:message>
+  <wsdl:message name="isUserValidResponse">
+    <wsdl:part name="parameters" element="isUserValidResponse"/>
+  </wsdl:message>
+  <wsdl:message name="SOAPException">
+    <wsdl:part name="SOAPException" element="SOAPException"/>
+  </wsdl:message>
+  <wsdl:message name="UserNotFoundException">
+    <wsdl:part name="UserNotFoundException" element="UserNotFoundException"/>
+  </wsdl:message>
+  <wsdl:message name="UserAuthTypeInvalidException">
+    <wsdl:part name="UserAuthTypeInvalidException" element="UserAuthTypeInvalidException"/>
+  </wsdl:message>
+  <wsdl:message name="UserAlreadyRegisteredException">
+    <wsdl:part name="UserAlreadyRegisteredException" element="UserAlreadyRegisteredException"/>
+  </wsdl:message>
+  <wsdl:message name="getUserSharedSecret">
+    <wsdl:part name="parameters" element="getUserSharedSecret"/>
+  </wsdl:message>
+  <wsdl:message name="getUserSharedSecretResponse">
+    <wsdl:part name="parameters" element="getUserSharedSecretResponse"/>
+  </wsdl:message>
+  <wsdl:message name="UserNotActiveException">
+    <wsdl:part name="UserNotActiveException" element="UserNotActiveException"/>
+  </wsdl:message>
+  <wsdl:message name="RegistrationNotCompleteException">
+    <wsdl:part name="RegistrationNotCompleteException" element="RegistrationNotCompleteException"/>
+  </wsdl:message>
+  <wsdl:message name="activatePortalUser">
+    <wsdl:part name="parameters" element="activatePortalUser"/>
+  </wsdl:message>
+  <wsdl:message name="activatePortalUserResponse">
+    <wsdl:part name="parameters" element="activatePortalUserResponse"/>
+  </wsdl:message>
+  <wsdl:message name="gw-authentication">
+    <wsdl:part name="gw-authentication" element="gwsoap:authentication"/>
+  </wsdl:message>
+  <wsdl:message name="gw-locale">
+    <wsdl:part name="gw-locale" element="gwsoap:locale"/>
+  </wsdl:message>
+</wsdl:definitions>

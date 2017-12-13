@@ -1,0 +1,245 @@
+{\rtf1\ansi\deff0{\fonttbl{\f0\fmodern Cambria;}{\f1\fnil\fcharset0 Arial;}{\f2\fswiss\fprq2\fcharset0 System;}{\f3\fnil\fcharset2 Symbol;}}
+{\colortbl ;\red23\green54\blue93;\red54\green95\blue145;\red0\green0\blue0;\red255\green0\blue0;\red0\green255\blue0;\red79\green129\blue189;}
+{\*\generator Msftedit 5.41.21.2500;}\viewkind4\uc1\pard\lang1033\f0\fs52\par
+\cf1 Notes\cf0\par
+\par
+\cf2\b\fs28 1.1 Portal/LDAP\cf0\b0\par
+\par
+\cf3\b\fs26 1.1.1 Web Services\cf0\b0\par
+\par
+\cf4\b\i\f1\fs18 NOTE! FOR WEB SERVICE RELATED CHANGES, THE POM.XML FILE \par
+IN THE ..\\PORTAL\\WEBSERVICECLIENT FOLDER WILL NEED TO\par
+HAVE THE WSDL PROPERTIES POINT TO LOCALHOST, OR TO A SERVER\par
+THAT HAS THE NEWEST CHANGES ON IT.\cf0\par
+\par
+\cf5 The file DefaultHeaderValues has a variable named GW_PASSWORD, and it will need editing\par
+if the guidewire 'su' user password changes\cf0\par
+\par
+\par
+============= web service dev ================\par
+If you need to add/change parameters in a guidewire service,\par
+run regen-wsi-local\par
+\par
+when changing method parameters on a web service, a set of steps is involved:\par
+\par
+\pard{\pntext\f1 1.\tab}{\*\pn\pnlvlbody\pnf1\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li360 Make the code change on XCenter\b0\i0\par
+{\pntext\f1 2.\tab}For the affected center stop it, and run regen-wsi-local\par
+{\pntext\f1 3.\tab}Restart the center\par
+{\pntext\f1 4.\tab}On the portal make sure the ..\\portal\\webserviceclient\\pom.xml wsdl properties urls points to localhost\par
+{\pntext\f1 5.\tab}Do a mvn clean install\par
+{\pntext\f1 6.\tab}Now the new parameter changes are available in Portal\par
+{\pntext\f1 7.\tab}Change the code in portal to use the new method parameters and mvn clean install.\par
+\pard\par
+\b THE CHANGES MADE WILL REQUIRE THAT THE UPDATED XCENTER CODE IS DEPLOYED AND RUNNING\par
+BEFORE THE CORRESPONDING PORTAL DEPLOYMENT WILL WORK.\par
+\par
+PC   - PayrollReportAPI,                PolicyHolderAPI\par
+BC   - CSNewCOIRequestAPI,      PortalSecurityAPI\par
+CC   - CSNewFNOIAPI,                    CSNewSubmissionAPI\b0\par
+\f0\fs26\par
+\cf6\b 1.1.2 Linux\cf0\b0\par
+\par
+\f1\fs18 redhat enterprise server\par
+\par
+\b find out what's installed \par
+\b0\par
+yum list installed \par
+\par
+\b  find out what's available\b0\par
+\par
+yum list available\par
+\f0\fs26\par
+\cf6\b 1.1.3 LDAP\cf0\b0\par
+\par
+\f1\fs18 to clone, You'll need to import compsourceok.ldif and admin.ldif, in that order. \par
+\par
+machine url is vm-gwportaldev1.s-i-f.local\par
+\par
+The pid location is -- /var/lib/apacheds-2.0.0-M15/default/run/\par
+\par
+The file is apacheds-default.pid\par
+\par
+To start it, run: /etc/init.d/apacheds-2.0.0-M15-default start \par
+\par
+\par
+THE PORTAL INSTANCE WILL HAVE TO BE RESTARTED IF THE LDAP SERVER GOES DOWN\par
+\par
+http://directory.apache.org/apacheds/basic-ug/1.4.3-adding-partition.html\par
+\f0\fs22\par
+\cf6\b 1.1.3.1 user/pw\cf0\b0\par
+\par
+\f1\fs18 uid=admin,o=compsourceok,dc=com / Password1\par
+\f0\fs22\par
+\cf6\b 1.1.3.2 start / stop\cf0\b0\par
+\par
+\f1\fs18 /etc/init.d/apacheds-2.0.0-M15-default start | stop\par
+\f0\fs26\par
+\cf6\b 1.1.4 Cloning\cf0\b0\par
+\par
+\f1\fs20 ============================== setting up for a new portal instance =================\par
+to see what's happening during process, look in /var/log/tomcat6 for logging files\par
+\par
+a couple of portal urls:\par
+\par
+http://rat3portal.s-i-f.local:8080/\par
+http://rat2portal.s-i-f.local:8080/\par
++++++++++++\par
+found the issue. there are a couple of directories that get cloned,\par
+that have to have their names changed for the specific instance.\par
+\par
+For example when cloning from rat3, the clone has a folder\par
+/usr/share/tomcat6/conf/Catalina/rat3portal.s-i-f.local, and\par
+I needed to rename it to /usr/share/tomcat6/conf/Catalina/rat2portal.s-i-f.local.\par
+++++++++++++++++++++\par
+Here's how to find the folders that need to be renamed after cloning\par
+find / -type d -name "rat*" -print\par
+/etc/tomcat6/Catalina/rat2portal.s-i-f.local\par
+/var/cache/tomcat6/work/Catalina/rat2portal.s-i-f.local\par
+/var/lib/tomcat6/webapps/rat2portal.s-i-f.local\par
+\par
+cd to /usr/share/tomcat6/conf/Catalina\par
+\par
+ mkdir rat3portal.s-i-f.local\par
+ \par
+ after deploy there will be a file ROOT.xml, need to do :  chmod u=rw,go=r ROOT.xml\par
+ \par
+ cd to /usr/share/tomcat6/webapps\par
+ \par
+ mkdir rat3portal.s-i-f.local\par
+ \par
+  cd to /usr/share/tomcat6/conf\par
+  \par
+  make sure server.xml has a <host> entry for the new instance\par
+  \par
+  make sure owner of the webapps folder is tomcat:\par
+  \par
+   chown tomcat rat3portal.s-i-f.local/\par
+  \fs18\par
+\f0\fs28\par
+\cf2\b 1.2 XCenter\cf0\b0\par
+\par
+\f1\fs18 To connect my local CC to E2E data, see the files config.xml.e2e, and db.properties.e2e\par
+\par
+\f0\fs26\par
+\cf6\b 1.2.1 restarting\cf0\b0\par
+\par
+\f1\fs18\par
+service cc restart (or bc, pc)\par
+\f0\fs26\par
+\cf6\b 1.2.2 builds\cf0\b0\par
+\par
+\f1\fs18 login to jenkins for building (isrk / CSOadmin)\par
+\par
+test and app build tab , FOR ALL CENTERS run "driver build" AND "driver test"\par
+test and app build tab , FOR ONE CENTER run "CENTER driver test"  THEN "CENTER driver build" example, run PolicyCenterTest THEN PolicyCenterApplicationBuild\par
+\par
+\par
+\par
+putty to vm-gwbuild for deploying\par
+cd /srv/DeployAndRestart\par
+./deploy.sh pc rat3 lastSuccessful\par
+\f0\fs28\par
+\cf2\b 1.3 Paths\cf0\b0\par
+\par
+\cf6\b\fs26 1.3.1 logs\cf0\b0\par
+\par
+\f1\fs20 /var/log/tomcat6/CsoPortal.log\par
+\par
+/var/lib/tomcat6/webapps/compsource-portal-webui-stripes/WEB-INF/classes/log4j.properties\par
+--------------------- logging.properties file locations -------\par
+/srv/tomcat/cc/webapps/.. there are two under here\fs18\par
+\f0\fs26\par
+\cf6\b 1.3.2 CMS\cf0\b0\par
+\par
+\f1\fs20\par
+/srv/csd/cms/query/request\par
+\par
+C:\\srv\\csd\\cms\\submission\\response\\ToProcess  (claim input files)\par
+\tab\par
+/srv/tomcat/cc/conf/resources/properties/cms.properties\par
+\par
+/tmp/gwlogs/claimcenter/logs/plugins/cms.log\par
+\par
+To process e2e locally, point your claimcenter config.xml entry to e2e, as well as point the db.properties INT1 entry to e2e\fs18\par
+\f0\fs26\par
+\cf6\b 1.3.3 TPA\cf0\b0\par
+\par
+\f1\fs20 ======== tpa ===========\par
+/srv/csd/tpa/cbr/pendingImport/\par
+/srv/tomcat/cc/conf/resources/properties/tpa.properties\par
+/tmp/gwlogs/ClaimCenter/logs/processplugin/importtpaclaims.log\par
+\par
+\\\\dev-central\\e2e\\tpa\\acco\\imported   \fs18\par
+\f0\fs28\par
+\cf2\b 1.4 Tomcat\cf0\b0\par
+\par
+\f1\fs20 /var/lib/tomcat6/webapps\par
+/etc/tomcat\par
+/srv/tomcat/cc/logs\par
+/srv/tomcat/cc/webapps/cc/modules/configuration/config/config.xml -- where the db stuff is located\par
+\par
+starting and stopping tomcat:\par
+  \par
+  /etc/init.d/tomcat6 restart\par
+  /etc/init.d/tomcat6 start\par
+  /etc/init.d/tomcat6 stop\fs18\par
+\f0\fs26\par
+\cf6\b 1.4.1 Debugging\cf0\b0\par
+\par
+\f1\fs20 JPDA PARAMETERS\par
+\par
+vm-gwportaltst1.s-i-f.local is the qa2 host name\par
+\par
+RKing-IS-L7 is localhost name\par
+\par
+scripts that setup jpda remote debugging\par
+\par
+tomcat6.save\par
+tomcat6.debug\par
+\par
+\par
+Found a cool library called javamelody that can monitor a webapp. https://code.google.com/p/javamelody/\par
+To use it the web.xml needs this:\par
+\par
+<filter>\par
+    <filter-name>monitoring</filter-name>\par
+    <filter-class>net.bull.javamelody.MonitoringFilter</filter-class>\par
+    <init-param>\par
+            <param-name>monitoring-path</param-name>\par
+            <param-value>/admin/monitoring</param-value>\par
+    </init-param>\par
+</filter>\par
+        <filter-mapping>\par
+                <filter-name>monitoring</filter-name>\par
+                <url-pattern>/*</url-pattern>\par
+        </filter-mapping>\par
+       <listener>\par
+                <listener-class>net.bull.javamelody.SessionListener</listener-class>\par
+        </listener>\par
+\par
+Then add these two jars to the server tomcat lib along with the catalina.jar:\par
+\par
+javamelody.jar\par
+jrobin-1.5.9.1.jar\par
+\par
+The url will look something like this:\par
+\par
+http://webservices.compsourceok.com:8080/admin/monitoring?\par
+\par
+http://<host>/admin/monitoring\par
+where <host> is the name of the server where the webapp is deployed, followed possibly by the port (for example localhost:8080)\par
+\f0\fs28\par
+\cf2\b 1.5 TODO\cf0\b0\par
+\par
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-360\li360\f1\fs20 fix ach/eft value on portal cashier payments\fs18\par
+\pard\f0\fs28\par
+\cf2\b 1.6 CMS\cf0\b0\par
+\par
+\f1\fs18 To connect my local CC to E2E data, see the files config.xml.e2e, and db.properties.e2e\par
+\par
+run claim-input-file-test.gs in gosu tester to populate the cms cc_integration table with claim_input records\par
+Then run\par
+\pard\b\f2\fs20\par
+}
+ 

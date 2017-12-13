@@ -1,0 +1,7 @@
+generate-source-from-schema --hostname localhost --port 10389 --bindDN "uid=admin,ou=system" --bindPassword "Password1" --outputDirectory C:\rt-works\java\ldap --structuralClass organizationalPerson --auxiliaryClass csoAgent --auxiliaryClass csoExtension --auxiliaryClass csoPerson --rdnAttribute csoAgencyNumber --packageName com.pwc.us.authentication.model --className LdapAgent 
+
+generate-source-from-schema --hostname localhost --port 10389 --bindDN "uid=admin,ou=system" --bindPassword "Password1" --outputDirectory C:\rt-works\java\ldap --structuralClass organizationalPerson --auxiliaryClass csoPolicyholder --auxiliaryClass csoExtension --auxiliaryClass csoPerson --rdnAttribute csoOkGovUserId --packageName com.pwc.us.authentication.model --className LdapPolicyholder 
+
+generate-source-from-schema --hostname vm-gwportaldev1 --port 10389 --bindDN "uid=admin,ou=system" --bindPassword "secret" --outputDirectory C:\rt-works\java\ldap --structuralClass organizationalPerson --auxiliaryClass csoPerson --rdnAttribute cn --packageName com.pwc.us.authentication.model --className LdapPerson 
+
+generate-source-from-schema --hostname vm-gwportaldev1 --port 10389 --bindDN "uid=admin,ou=system" --bindPassword "secret" --outputDirectory C:\rt-works\java\ldap --structuralClass organizationalPerson --auxiliaryClass csoCashier --rdnAttribute cn --packageName com.pwc.us.authentication.model --className LdapCashier 

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<xsd:schema
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:gw="http://guidewire.com/xsd"
+      xmlns="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.incident.bodypartdetailsmodel"
+      targetNamespace="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.incident.bodypartdetailsmodel"
+      elementFormDefault="qualified">
+  <xsd:element
+        name="BodyPartDetails" type="BodyPartDetails" nillable="true"/>
+  <xsd:complexType
+        name="BodyPartDetails">
+    <xsd:sequence>
+      <xsd:element name="DetailedBodyPart" minOccurs="0" nillable="true" type="xsd:string"/>
+      <xsd:element name="PrimaryBodyPart" minOccurs="0" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

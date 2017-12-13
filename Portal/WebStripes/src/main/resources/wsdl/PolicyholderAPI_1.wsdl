@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Generated WSDL for compsource.pc.api.isactive.policyholder.PolicyholderAPI web service--><wsdl:definitions targetNamespace="http://example.com/compsource/pc/api/isactive/policyholder/PolicyholderAPI" name="PolicyholderAPI" xmlns="http://example.com/compsource/pc/api/isactive/policyholder/PolicyholderAPI" xmlns:gwsoap="http://guidewire.com/ws/soapheaders" xmlns:gwwsdl="http://guidewire.com/pl/wsdl" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://example.com/compsource/pc/api/isactive/policyholder/PolicyholderAPI" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/ws/soapheaders" schemaLocation="soapheaders.xsd"/>
+      <!--queryCashierAuth(String, String) : String-->
+      <xs:element name="queryCashierAuth">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="user" type="xs:string" minOccurs="0"/>
+            <xs:element name="password" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="queryCashierAuthResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SOAPException">
+        <xs:complexType/>
+      </xs:element>
+      <!--queryAcctUsingPolicyNum(String) : String-->
+      <xs:element name="queryAcctUsingPolicyNum">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="PolNum" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="queryAcctUsingPolicyNumResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="FieldFormatException">
+        <xs:complexType/>
+      </xs:element>
+      <!--findPolicyNumbers(String) : List<String>-->
+      <xs:element name="findPolicyNumbers">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="accountNumber" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="findPolicyNumbersResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="list" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Entry" type="xs:string" nillable="true"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RequiredFieldException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="XmlException">
+        <xs:complexType/>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:portType name="PolicyholderAPIPortType">
+    <wsdl:operation name="queryCashierAuth">
+      <wsdl:input name="queryCashierAuth" message="queryCashierAuth"/>
+      <wsdl:output name="queryCashierAuthResponse" message="queryCashierAuthResponse"/>
+      <!--If a communication errors occurs-->
+      <wsdl:fault name="SOAPException" message="SOAPException"/>
+    </wsdl:operation>
+    <wsdl:operation name="queryAcctUsingPolicyNum">
+      <wsdl:input name="queryAcctUsingPolicyNum" message="queryAcctUsingPolicyNum"/>
+      <wsdl:output name="queryAcctUsingPolicyNumResponse" message="queryAcctUsingPolicyNumResponse"/>
+      <!--If a communication errors occurs-->
+      <wsdl:fault name="SOAPException" message="SOAPException"/>
+      <!--If the value passed in does not match the format expected-->
+      <wsdl:fault name="FieldFormatException" message="FieldFormatException"/>
+    </wsdl:operation>
+    <wsdl:operation name="findPolicyNumbers">
+      <wsdl:input name="findPolicyNumbers" message="findPolicyNumbers"/>
+      <wsdl:output name="findPolicyNumbersResponse" message="findPolicyNumbersResponse"/>
+      <!--if arguments are null-->
+      <wsdl:fault name="RequiredFieldException" message="RequiredFieldException"/>
+      <!--If a communication errors occurs-->
+      <wsdl:fault name="SOAPException" message="SOAPException"/>
+      <!--If an XML parse error occurs-->
+      <wsdl:fault name="XmlException" message="XmlException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PolicyholderAPISoap12Binding" type="PolicyholderAPIPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="queryCashierAuth">
+      <soap12:operation style="document"/>
+      <wsdl:input name="queryCashierAuth">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="queryCashierAuthResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="queryAcctUsingPolicyNum">
+      <soap12:operation style="document"/>
+      <wsdl:input name="queryAcctUsingPolicyNum">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="queryAcctUsingPolicyNumResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="FieldFormatException">
+        <soap12:fault name="FieldFormatException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findPolicyNumbers">
+      <soap12:operation style="document"/>
+      <wsdl:input name="findPolicyNumbers">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findPolicyNumbersResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap12:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PolicyholderAPISoap11Binding" type="PolicyholderAPIPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="queryCashierAuth">
+      <soap11:operation style="document"/>
+      <wsdl:input name="queryCashierAuth">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="queryCashierAuthResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="queryAcctUsingPolicyNum">
+      <soap11:operation style="document"/>
+      <wsdl:input name="queryAcctUsingPolicyNum">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="queryAcctUsingPolicyNumResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="FieldFormatException">
+        <soap11:fault name="FieldFormatException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findPolicyNumbers">
+      <soap11:operation style="document"/>
+      <wsdl:input name="findPolicyNumbers">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findPolicyNumbersResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap11:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PolicyholderAPI">
+    <wsdl:port name="PolicyholderAPISoap12Port" binding="PolicyholderAPISoap12Binding">
+      <soap12:address location="http://gwprod1pcp1.s-i-f.local:8180/pc/ws/compsource/pc/api/isactive/policyholder/PolicyholderAPI"/>
+      <gwwsdl:address location="${pc}/ws/compsource/pc/api/isactive/policyholder/PolicyholderAPI"/>
+    </wsdl:port>
+    <wsdl:port name="PolicyholderAPISoap11Port" binding="PolicyholderAPISoap11Binding">
+      <soap11:address location="http://gwprod1pcp1.s-i-f.local:8180/pc/ws/compsource/pc/api/isactive/policyholder/PolicyholderAPI/soap11"/>
+      <gwwsdl:address location="${pc}/ws/compsource/pc/api/isactive/policyholder/PolicyholderAPI/soap11"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:message name="queryCashierAuth">
+    <wsdl:part name="parameters" element="queryCashierAuth"/>
+  </wsdl:message>
+  <wsdl:message name="queryCashierAuthResponse">
+    <wsdl:part name="parameters" element="queryCashierAuthResponse"/>
+  </wsdl:message>
+  <wsdl:message name="SOAPException">
+    <wsdl:part name="SOAPException" element="SOAPException"/>
+  </wsdl:message>
+  <wsdl:message name="queryAcctUsingPolicyNum">
+    <wsdl:part name="parameters" element="queryAcctUsingPolicyNum"/>
+  </wsdl:message>
+  <wsdl:message name="queryAcctUsingPolicyNumResponse">
+    <wsdl:part name="parameters" element="queryAcctUsingPolicyNumResponse"/>
+  </wsdl:message>
+  <wsdl:message name="FieldFormatException">
+    <wsdl:part name="FieldFormatException" element="FieldFormatException"/>
+  </wsdl:message>
+  <wsdl:message name="findPolicyNumbers">
+    <wsdl:part name="parameters" element="findPolicyNumbers"/>
+  </wsdl:message>
+  <wsdl:message name="findPolicyNumbersResponse">
+    <wsdl:part name="parameters" element="findPolicyNumbersResponse"/>
+  </wsdl:message>
+  <wsdl:message name="RequiredFieldException">
+    <wsdl:part name="RequiredFieldException" element="RequiredFieldException"/>
+  </wsdl:message>
+  <wsdl:message name="XmlException">
+    <wsdl:part name="XmlException" element="XmlException"/>
+  </wsdl:message>
+  <wsdl:message name="gw-authentication">
+    <wsdl:part name="gw-authentication" element="gwsoap:authentication"/>
+  </wsdl:message>
+  <wsdl:message name="gw-locale">
+    <wsdl:part name="gw-locale" element="gwsoap:locale"/>
+  </wsdl:message>
+</wsdl:definitions>

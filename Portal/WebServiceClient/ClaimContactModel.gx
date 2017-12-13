@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<xsd:schema
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:gw="http://guidewire.com/xsd"
+      xmlns="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.contact.claimcontactmodel"
+      targetNamespace="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.contact.claimcontactmodel"
+      elementFormDefault="qualified"
+      xmlns:ns0="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.contact.claimcontactrolemodel"
+      xmlns:ns1="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.contact.contactmodel">
+  <xsd:import
+        namespace="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.contact.claimcontactrolemodel" schemaLocation="ClaimContactRoleModel.gx"/>
+  <xsd:import namespace="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.contact.contactmodel" schemaLocation="ContactModel.gx"/>
+  <xsd:element
+        name="ClaimContact" type="ClaimContact" nillable="true"/>
+  <xsd:complexType
+        name="ClaimContact">
+    <xsd:sequence>
+      <xsd:element name="Contact" minOccurs="0" nillable="true" type="ns1:Contact"/>
+      <xsd:element name="Roles" minOccurs="0" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Entry" minOccurs="0" maxOccurs="unbounded" nillable="true" type="ns0:ClaimContactRole"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

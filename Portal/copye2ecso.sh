@@ -1,0 +1,1 @@
+scp  root@eeportal.s-i-f.local:/usr/share/tomcat6/logs/CsoPortal.log ./CsoPortal.log

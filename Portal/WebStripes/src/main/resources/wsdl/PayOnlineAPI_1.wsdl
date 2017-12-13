@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Generated WSDL for compsource.bc.api.payonline.PayOnlineAPI web service--><wsdl:definitions targetNamespace="http://guidewire.com/compsource/bc/api/payonline/PayOnlineAPI" name="PayOnlineAPI" xmlns="http://guidewire.com/compsource/bc/api/payonline/PayOnlineAPI" xmlns:gwsoap="http://guidewire.com/ws/soapheaders" xmlns:gwwsdl="http://guidewire.com/pl/wsdl" xmlns:pogo="http://example.com/compsource/bc/api/payonline" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://guidewire.com/compsource/bc/api/payonline/PayOnlineAPI" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/ws/soapheaders" schemaLocation="soapheaders.xsd"/>
+      <xs:import namespace="http://example.com/compsource/bc/api/payonline"/>
+      <!-- getAccountName(String) : String -->
+      <xs:element name="getAccountName">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="accountNumber" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAccountNameResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- eligibleForPayOnline(String) : boolean -->
+      <xs:element name="eligibleForPayOnline">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="accountNumber" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="eligibleForPayOnlineResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- getBillingInfo(String) : PayOnlineBillingInfo -->
+      <xs:element name="getBillingInfo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="accountNumber" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getBillingInfoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" type="pogo:PayOnlineBillingInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- makePayment(String, String, double, Date) : boolean -->
+      <xs:element name="makePayment">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="transactionID" type="xs:string" minOccurs="0"/>
+            <xs:element name="accountNumber" type="xs:string" minOccurs="0"/>
+            <xs:element name="paymentAmount" type="xs:double"/>
+            <xs:element name="receivedDate" type="xs:dateTime" gw:type="java.util.Date" minOccurs="0" xmlns:gw="http://guidewire.com/xsd"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="makePaymentResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- makePaymentWithPaymentType(String, String, double, Date, String) : boolean -->
+      <xs:element name="makePaymentWithPaymentType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="transactionID" type="xs:string" minOccurs="0"/>
+            <xs:element name="accountNumber" type="xs:string" minOccurs="0"/>
+            <xs:element name="paymentAmount" type="xs:double"/>
+            <xs:element name="receivedDate" type="xs:dateTime" gw:type="java.util.Date" minOccurs="0" xmlns:gw="http://guidewire.com/xsd"/>
+            <xs:element name="paymentType" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="makePaymentWithPaymentTypeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema targetNamespace="http://example.com/compsource/bc/api/payonline" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="PayOnlineBillingInfo">
+        <xs:sequence>
+          <xs:element name="CurrentAccountBalance" type="xs:double"/>
+          <xs:element name="CurrentAccountBalanceTimestamp" type="xs:dateTime" gw:type="java.util.Date" minOccurs="0" xmlns:gw="http://guidewire.com/xsd"/>
+          <xs:element name="CurrentBalanceBilled" type="xs:double"/>
+          <xs:element name="DueDate" type="xs:dateTime" gw:type="java.util.Date" minOccurs="0" xmlns:gw="http://guidewire.com/xsd"/>
+          <xs:element name="PastDueBalanceBilled" type="xs:double"/>
+          <xs:element name="TotalAmountBilled" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:portType name="PayOnlineAPIPortType">
+    <wsdl:operation name="getAccountName">
+      <wsdl:input name="getAccountName" message="getAccountName"/>
+      <wsdl:output name="getAccountNameResponse" message="getAccountNameResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="eligibleForPayOnline">
+      <wsdl:input name="eligibleForPayOnline" message="eligibleForPayOnline"/>
+      <wsdl:output name="eligibleForPayOnlineResponse" message="eligibleForPayOnlineResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getBillingInfo">
+      <wsdl:input name="getBillingInfo" message="getBillingInfo"/>
+      <wsdl:output name="getBillingInfoResponse" message="getBillingInfoResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="makePayment">
+      <wsdl:input name="makePayment" message="makePayment"/>
+      <wsdl:output name="makePaymentResponse" message="makePaymentResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="makePaymentWithPaymentType">
+      <wsdl:input name="makePaymentWithPaymentType" message="makePaymentWithPaymentType"/>
+      <wsdl:output name="makePaymentWithPaymentTypeResponse" message="makePaymentWithPaymentTypeResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PayOnlineAPISoap12Binding" type="PayOnlineAPIPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="getAccountName">
+      <soap12:operation style="document"/>
+      <wsdl:input name="getAccountName">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAccountNameResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eligibleForPayOnline">
+      <soap12:operation style="document"/>
+      <wsdl:input name="eligibleForPayOnline">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="eligibleForPayOnlineResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBillingInfo">
+      <soap12:operation style="document"/>
+      <wsdl:input name="getBillingInfo">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getBillingInfoResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="makePayment">
+      <soap12:operation style="document"/>
+      <wsdl:input name="makePayment">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="makePaymentResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="makePaymentWithPaymentType">
+      <soap12:operation style="document"/>
+      <wsdl:input name="makePaymentWithPaymentType">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="makePaymentWithPaymentTypeResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PayOnlineAPISoap11Binding" type="PayOnlineAPIPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="getAccountName">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getAccountName">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAccountNameResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eligibleForPayOnline">
+      <soap11:operation style="document"/>
+      <wsdl:input name="eligibleForPayOnline">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="eligibleForPayOnlineResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBillingInfo">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getBillingInfo">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getBillingInfoResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="makePayment">
+      <soap11:operation style="document"/>
+      <wsdl:input name="makePayment">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="makePaymentResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="makePaymentWithPaymentType">
+      <soap11:operation style="document"/>
+      <wsdl:input name="makePaymentWithPaymentType">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="makePaymentWithPaymentTypeResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PayOnlineAPI">
+    <wsdl:port name="PayOnlineAPISoap12Port" binding="PayOnlineAPISoap12Binding">
+      <soap12:address location="http://localhost:8580/bc/ws/compsource/bc/api/payonline/PayOnlineAPI"/>
+      <gwwsdl:address location="${bc}/ws/compsource/bc/api/payonline/PayOnlineAPI"/>
+    </wsdl:port>
+    <wsdl:port name="PayOnlineAPISoap11Port" binding="PayOnlineAPISoap11Binding">
+      <soap11:address location="http://localhost:8580/bc/ws/compsource/bc/api/payonline/PayOnlineAPI/soap11"/>
+      <gwwsdl:address location="${bc}/ws/compsource/bc/api/payonline/PayOnlineAPI/soap11"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:message name="getAccountName">
+    <wsdl:part name="parameters" element="getAccountName"/>
+  </wsdl:message>
+  <wsdl:message name="getAccountNameResponse">
+    <wsdl:part name="parameters" element="getAccountNameResponse"/>
+  </wsdl:message>
+  <wsdl:message name="eligibleForPayOnline">
+    <wsdl:part name="parameters" element="eligibleForPayOnline"/>
+  </wsdl:message>
+  <wsdl:message name="eligibleForPayOnlineResponse">
+    <wsdl:part name="parameters" element="eligibleForPayOnlineResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getBillingInfo">
+    <wsdl:part name="parameters" element="getBillingInfo"/>
+  </wsdl:message>
+  <wsdl:message name="getBillingInfoResponse">
+    <wsdl:part name="parameters" element="getBillingInfoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="makePayment">
+    <wsdl:part name="parameters" element="makePayment"/>
+  </wsdl:message>
+  <wsdl:message name="makePaymentResponse">
+    <wsdl:part name="parameters" element="makePaymentResponse"/>
+  </wsdl:message>
+  <wsdl:message name="makePaymentWithPaymentType">
+    <wsdl:part name="parameters" element="makePaymentWithPaymentType"/>
+  </wsdl:message>
+  <wsdl:message name="makePaymentWithPaymentTypeResponse">
+    <wsdl:part name="parameters" element="makePaymentWithPaymentTypeResponse"/>
+  </wsdl:message>
+  <wsdl:message name="gw-authentication">
+    <wsdl:part name="gw-authentication" element="gwsoap:authentication"/>
+  </wsdl:message>
+  <wsdl:message name="gw-locale">
+    <wsdl:part name="gw-locale" element="gwsoap:locale"/>
+  </wsdl:message>
+</wsdl:definitions>

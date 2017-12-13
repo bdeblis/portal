@@ -1,0 +1,81 @@
+# The admin user
+dn: uid=admin,o=compsourceok,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+uid: admin
+cn: admin
+sn: admin
+description: The admin user for the Portal LDAP
+userpassword: Password1
+
+# The users group
+dn: ou=users,o=compsourceok,dc=com
+objectClass: top
+objectClass: organizationalUnit
+
+# Agent Users
+dn: cn=Person Agentperson paperson,ou=users,o=compsourceok,dc=com
+cn: Person Agentperson
+objectClass: top 
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: csoPerson
+objectClass: csoAgent
+uid: paperson
+userpassword: Password1
+mail: p_agentperson@agency.com
+givenname: Person
+sn: Agentperson
+ou: Agents
+homePhone: 800-555-1313
+csoAgencyNumber: 70
+csoAgencyName: The Agency Agency
+csoChallengeQuestion: What were you thinking?
+csoChallengeAnswer: Nothing
+csoLastLogin: 04/21/2013 8:00 AM
+
+dn: cn=Agent Guytwo aguytwo,ou=users,o=compsourceok,dc=com
+cn: Agent Guytwo
+objectClass: top 
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: csoPerson
+objectClass: csoAgent
+uid: aguytwo
+userpassword: Password1
+mail: aguytwo@agency.com
+givenname: Agent
+sn: Guytwo
+ou: Agents
+homePhone: 800-555-1313
+csoAgencyNumber: 70
+csoAgencyName: The Agency Agency
+csoChallengeQuestion: What is the answer to life, the universe, and everything?
+csoChallengeAnswer: 42
+csoLastLogin: 04/21/2013 8:00 AM
+
+# Policyholder User
+dn: cn=Polly Policy ppolicy,ou=users,o=compsourceok,dc=com
+cn: Polly Policy
+objectClass: top 
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: csoPerson
+objectClass: csoPolicyholder
+uid: ppolicy
+userpassword: Password1
+mail: p_policy@runswithscissors.com
+givenName: Polly
+sn: Policy
+ou: Policyholder
+homePhone: 800-555-1313
+csoPolicyNumber: 01444430
+csoPhCompanyname: We Run With Scissors, Inc.
+csoChallengeQuestion: What were you thinking?
+csoChallengeAnswer: Nothing
+csoOkGovUserId: 787878
+csoLastLogin: 04/21/2013 8:00 AM

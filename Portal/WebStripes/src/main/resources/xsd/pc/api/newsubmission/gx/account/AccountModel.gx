@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<xsd:schema
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:gw="http://guidewire.com/xsd"
+      xmlns="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.account.accountmodel"
+      targetNamespace="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.account.accountmodel"
+      elementFormDefault="qualified"
+      xmlns:ns0="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.contact.contactmodel">
+  <xsd:import
+        namespace="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.contact.contactmodel" schemaLocation="../contact/ContactModel.gx"/>
+  <xsd:element
+        name="Account" type="Account" nillable="true"/>
+  <xsd:complexType
+        name="Account">
+    <xsd:sequence>
+      <xsd:element name="AccountHolderContact" minOccurs="0" nillable="true" type="ns0:Contact"/>
+      <xsd:element name="BusOpsDesc" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

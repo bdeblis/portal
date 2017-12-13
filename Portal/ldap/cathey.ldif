@@ -1,0 +1,25 @@
+version: 1
+dn: cn=joe cashier joecashier,ou=users,o=compsourceok,dc=com
+objectClass: csoCashier
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: csoPerson
+objectClass: csoExtension
+objectClass: person
+objectClass: top
+cn: cathey cashier catheycashier
+csoChallengeAnswer: cashier
+csoChallengeQuestion: what's your role?
+csoOkGovUserId: null
+csoPcAccountId:
+csoPhCompanyName: cashier
+csoPolicyNumber:
+givenname: cathey
+homePhone: 444-555-1212
+mail: ron_k@compsourceok.com
+sn: cashier
+uid: catheycashier
+userPassword:: e1NTSEE1MTJ9KzByai9MVG1oN1BjajNxOFA5UGcxRTllQXYrWjhoSmlUR3NmW
+ GRwY0MrMVllTTZqMUMvTytkUUFINUdZRHhaRGhEbGUyL1NUbDZIczRwQ3FxZlNaejR3dzVDWFVN
+ bzg0
+

@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Generated WSDL for compsource.pc.api.newsubmission.CSNewSubmissionAPI web service--><wsdl:definitions targetNamespace="http://guidewire.com/compsource/pc/api/newsubmission/CSNewSubmissionAPI" name="CSNewSubmissionAPI" xmlns="http://guidewire.com/compsource/pc/api/newsubmission/CSNewSubmissionAPI" xmlns:gwsoap="http://guidewire.com/ws/soapheaders" xmlns:gwwsdl="http://guidewire.com/pl/wsdl" xmlns:pogo="http://example.com/compsource/pc/api/util" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://guidewire.com/compsource/pc/api/newsubmission/CSNewSubmissionAPI" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/ws/soapheaders" schemaLocation="soapheaders.xsd"/>
+      <xs:import namespace="http://example.com/compsource/pc/api/util"/>
+      <!--createNewSubmission(String, String) : String-->
+      <xs:element name="createNewSubmission">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="accountDataXML" type="xs:string" minOccurs="0"/>
+            <xs:element name="submissionDataXML" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="createNewSubmissionResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SOAPException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="RequiredFieldException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="FieldConversionException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="XmlException">
+        <xs:complexType/>
+      </xs:element>
+      <!--getAccountOrgTypeTypeKeys() : TypekeyName[]-->
+      <xs:element name="getAccountOrgTypeTypeKeys">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="getAccountOrgTypeTypeKeysResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Entry" nillable="true" type="pogo:TypekeyName"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--getOwnerOfficerRelationshipTypeKeys() : TypekeyName[]-->
+      <xs:element name="getOwnerOfficerRelationshipTypeKeys">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="getOwnerOfficerRelationshipTypeKeysResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Entry" nillable="true" type="pogo:TypekeyName"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--getAddlIntRelationship_ExtTypeKeys() : TypekeyName[]-->
+      <xs:element name="getAddlIntRelationship_ExtTypeKeys">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="getAddlIntRelationship_ExtTypeKeysResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Entry" nillable="true" type="pogo:TypekeyName"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema targetNamespace="http://example.com/compsource/pc/api/util" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="TypekeyName">
+        <xs:sequence>
+          <xs:element name="Code" type="xs:string" minOccurs="0"/>
+          <xs:element name="Name" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:portType name="CSNewSubmissionAPIPortType">
+    <wsdl:operation name="createNewSubmission">
+      <wsdl:input name="createNewSubmission" message="createNewSubmission"/>
+      <wsdl:output name="createNewSubmissionResponse" message="createNewSubmissionResponse"/>
+      <!--If a communication errors occurs-->
+      <wsdl:fault name="SOAPException" message="SOAPException"/>
+      <!--If a required field is missing from either of the XML Documents passed as arguments-->
+      <wsdl:fault name="RequiredFieldException" message="RequiredFieldException"/>
+      <!--If a field value in either of the XML Documents passed as arguments is invalid-->
+      <wsdl:fault name="FieldConversionException" message="FieldConversionException"/>
+      <!--If an XML parse error occurs-->
+      <wsdl:fault name="XmlException" message="XmlException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getAccountOrgTypeTypeKeys">
+      <wsdl:input name="getAccountOrgTypeTypeKeys" message="getAccountOrgTypeTypeKeys"/>
+      <wsdl:output name="getAccountOrgTypeTypeKeysResponse" message="getAccountOrgTypeTypeKeysResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getOwnerOfficerRelationshipTypeKeys">
+      <wsdl:input name="getOwnerOfficerRelationshipTypeKeys" message="getOwnerOfficerRelationshipTypeKeys"/>
+      <wsdl:output name="getOwnerOfficerRelationshipTypeKeysResponse" message="getOwnerOfficerRelationshipTypeKeysResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getAddlIntRelationship_ExtTypeKeys">
+      <wsdl:input name="getAddlIntRelationship_ExtTypeKeys" message="getAddlIntRelationship_ExtTypeKeys"/>
+      <wsdl:output name="getAddlIntRelationship_ExtTypeKeysResponse" message="getAddlIntRelationship_ExtTypeKeysResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CSNewSubmissionAPISoap12Binding" type="CSNewSubmissionAPIPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="createNewSubmission">
+      <soap12:operation style="document"/>
+      <wsdl:input name="createNewSubmission">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createNewSubmissionResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="FieldConversionException">
+        <soap12:fault name="FieldConversionException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap12:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAccountOrgTypeTypeKeys">
+      <soap12:operation style="document"/>
+      <wsdl:input name="getAccountOrgTypeTypeKeys">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAccountOrgTypeTypeKeysResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOwnerOfficerRelationshipTypeKeys">
+      <soap12:operation style="document"/>
+      <wsdl:input name="getOwnerOfficerRelationshipTypeKeys">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getOwnerOfficerRelationshipTypeKeysResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAddlIntRelationship_ExtTypeKeys">
+      <soap12:operation style="document"/>
+      <wsdl:input name="getAddlIntRelationship_ExtTypeKeys">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAddlIntRelationship_ExtTypeKeysResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CSNewSubmissionAPISoap11Binding" type="CSNewSubmissionAPIPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="createNewSubmission">
+      <soap11:operation style="document"/>
+      <wsdl:input name="createNewSubmission">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createNewSubmissionResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="FieldConversionException">
+        <soap11:fault name="FieldConversionException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap11:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAccountOrgTypeTypeKeys">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getAccountOrgTypeTypeKeys">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAccountOrgTypeTypeKeysResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOwnerOfficerRelationshipTypeKeys">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getOwnerOfficerRelationshipTypeKeys">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getOwnerOfficerRelationshipTypeKeysResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAddlIntRelationship_ExtTypeKeys">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getAddlIntRelationship_ExtTypeKeys">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAddlIntRelationship_ExtTypeKeysResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CSNewSubmissionAPI">
+    <wsdl:port name="CSNewSubmissionAPISoap12Port" binding="CSNewSubmissionAPISoap12Binding">
+      <soap12:address location="http://localhost:8180/pc/ws/compsource/pc/api/newsubmission/CSNewSubmissionAPI"/>
+      <gwwsdl:address location="${pc}/ws/compsource/pc/api/newsubmission/CSNewSubmissionAPI"/>
+    </wsdl:port>
+    <wsdl:port name="CSNewSubmissionAPISoap11Port" binding="CSNewSubmissionAPISoap11Binding">
+      <soap11:address location="http://localhost:8180/pc/ws/compsource/pc/api/newsubmission/CSNewSubmissionAPI/soap11"/>
+      <gwwsdl:address location="${pc}/ws/compsource/pc/api/newsubmission/CSNewSubmissionAPI/soap11"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:message name="createNewSubmission">
+    <wsdl:part name="parameters" element="createNewSubmission"/>
+  </wsdl:message>
+  <wsdl:message name="createNewSubmissionResponse">
+    <wsdl:part name="parameters" element="createNewSubmissionResponse"/>
+  </wsdl:message>
+  <wsdl:message name="SOAPException">
+    <wsdl:part name="SOAPException" element="SOAPException"/>
+  </wsdl:message>
+  <wsdl:message name="RequiredFieldException">
+    <wsdl:part name="RequiredFieldException" element="RequiredFieldException"/>
+  </wsdl:message>
+  <wsdl:message name="FieldConversionException">
+    <wsdl:part name="FieldConversionException" element="FieldConversionException"/>
+  </wsdl:message>
+  <wsdl:message name="XmlException">
+    <wsdl:part name="XmlException" element="XmlException"/>
+  </wsdl:message>
+  <wsdl:message name="getAccountOrgTypeTypeKeys">
+    <wsdl:part name="parameters" element="getAccountOrgTypeTypeKeys"/>
+  </wsdl:message>
+  <wsdl:message name="getAccountOrgTypeTypeKeysResponse">
+    <wsdl:part name="parameters" element="getAccountOrgTypeTypeKeysResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getOwnerOfficerRelationshipTypeKeys">
+    <wsdl:part name="parameters" element="getOwnerOfficerRelationshipTypeKeys"/>
+  </wsdl:message>
+  <wsdl:message name="getOwnerOfficerRelationshipTypeKeysResponse">
+    <wsdl:part name="parameters" element="getOwnerOfficerRelationshipTypeKeysResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getAddlIntRelationship_ExtTypeKeys">
+    <wsdl:part name="parameters" element="getAddlIntRelationship_ExtTypeKeys"/>
+  </wsdl:message>
+  <wsdl:message name="getAddlIntRelationship_ExtTypeKeysResponse">
+    <wsdl:part name="parameters" element="getAddlIntRelationship_ExtTypeKeysResponse"/>
+  </wsdl:message>
+  <wsdl:message name="gw-authentication">
+    <wsdl:part name="gw-authentication" element="gwsoap:authentication"/>
+  </wsdl:message>
+  <wsdl:message name="gw-locale">
+    <wsdl:part name="gw-locale" element="gwsoap:locale"/>
+  </wsdl:message>
+</wsdl:definitions>

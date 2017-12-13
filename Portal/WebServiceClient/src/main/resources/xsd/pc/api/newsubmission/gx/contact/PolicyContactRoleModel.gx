@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<xsd:schema
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:gw="http://guidewire.com/xsd"
+      xmlns="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.contact.policycontactrolemodel"
+      targetNamespace="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.contact.policycontactrolemodel"
+      elementFormDefault="qualified"
+      xmlns:ns0="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.contact.contactmodel">
+  <xsd:import
+        namespace="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.contact.contactmodel" schemaLocation="ContactModel.gx"/>
+  <xsd:element
+        name="PolicyContactRole" type="PolicyContactRole" nillable="true"/>
+  <xsd:complexType
+        name="PolicyContactRole">
+    <xsd:sequence>
+      <xsd:element name="entity-WC7PolicyOwnerOfficer" minOccurs="0" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ActiveInBusiness_Ext" minOccurs="0" nillable="true" type="xsd:boolean" gw:type="java.lang.Boolean"/>
+            <xsd:element name="RelationshipTitle" minOccurs="0" nillable="true" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AccountContactRole" minOccurs="0" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="AccountContact" minOccurs="0" nillable="true">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="Contact" minOccurs="0" nillable="true" type="ns0:Contact"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Subtype" minOccurs="0" nillable="true" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Subtype" minOccurs="0" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

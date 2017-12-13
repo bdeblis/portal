@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<xsd:schema
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:gw="http://guidewire.com/xsd"
+      xmlns="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.claim.claimmodel"
+      targetNamespace="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.claim.claimmodel"
+      elementFormDefault="qualified"
+      xmlns:ns0="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.address.addressmodel"
+      xmlns:ns1="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.claim.employmentdatamodel"
+      xmlns:ns2="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.contact.claimcontactmodel"
+      xmlns:ns3="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.incident.incidentmodel"
+      xmlns:ns4="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.note.notemodel"
+      xmlns:ns5="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.policy.policymodel">
+  <xsd:import
+        namespace="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.address.addressmodel" schemaLocation="../address/AddressModel.gx"/>
+  <xsd:import namespace="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.claim.employmentdatamodel" schemaLocation="EmploymentDataModel.gx"/>
+  <xsd:import namespace="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.contact.claimcontactmodel" schemaLocation="../contact/ClaimContactModel.gx"/>
+  <xsd:import namespace="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.incident.incidentmodel" schemaLocation="../incident/IncidentModel.gx"/>
+  <xsd:import namespace="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.note.notemodel" schemaLocation="../Note/NoteModel.gx"/>
+  <xsd:import namespace="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.policy.policymodel" schemaLocation="../policy/PolicyModel.gx"/>
+  <xsd:element
+        name="Claim" type="Claim" nillable="true"/>
+  <xsd:complexType
+        name="Claim">
+    <xsd:sequence>
+      <xsd:element name="Contacts" minOccurs="0" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Entry" minOccurs="0" maxOccurs="unbounded" nillable="true" type="ns2:ClaimContact"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DateRptdToEmployer" minOccurs="0" nillable="true" type="xsd:dateTime" gw:type="java.util.Date"/>
+      <xsd:element name="DeathDate" minOccurs="0" nillable="true" type="xsd:dateTime" gw:type="java.util.Date"/>
+      <xsd:element name="Description" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+      <xsd:element name="EmploymentData" minOccurs="0" nillable="true" type="ns1:EmploymentData"/>
+      <xsd:element name="EmpQusValidity" minOccurs="0" nillable="true" type="xsd:string"/>
+      <xsd:element name="Incidents" minOccurs="0" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Entry" minOccurs="0" maxOccurs="unbounded" nillable="true" type="ns3:Incident"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="LossDate" minOccurs="0" nillable="true" type="xsd:dateTime" gw:type="java.util.Date"/>
+      <xsd:element name="LossLocation" minOccurs="0" nillable="true" type="ns0:Address"/>
+      <xsd:element name="Notes" minOccurs="0" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Entry" minOccurs="0" maxOccurs="unbounded" nillable="true" type="ns4:Note"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Policy" minOccurs="0" nillable="true" type="ns5:Policy"/>
+      <xsd:element name="ReportedByType" minOccurs="0" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

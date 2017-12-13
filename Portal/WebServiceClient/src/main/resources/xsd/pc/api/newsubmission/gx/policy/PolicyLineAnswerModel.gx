@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<xsd:schema
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:gw="http://guidewire.com/xsd"
+      xmlns="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.policy.policylineanswermodel"
+      targetNamespace="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.policy.policylineanswermodel"
+      elementFormDefault="qualified">
+  <xsd:element
+        name="PolicyLineAnswer" type="PolicyLineAnswer" nillable="true"/>
+  <xsd:complexType
+        name="PolicyLineAnswer">
+    <xsd:sequence>
+      <xsd:element name="BooleanAnswer" minOccurs="0" nillable="true" type="xsd:boolean" gw:type="java.lang.Boolean"/>
+      <xsd:element name="QuestionCode" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+      <xsd:element name="TextAnswer" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

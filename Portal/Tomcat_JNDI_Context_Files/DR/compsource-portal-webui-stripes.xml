@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- PROD Context --> <Context antiJARLocking="true">
+    <!-- The ldap lookup for ApacheDS Portal Admin user -->
+    <Environment name="cso-portal/ldapAdmin" value="uid=admin,o=compsourceok,dc=com" type="java.lang.String" override="false" />
+ 
+    <!-- The ApacheDS URL -->
+    <Environment name="cso-portal/ldapUrl" value="gwprod1portal-dr" type="java.lang.String" override="false" />
+    <!-- The ApacheDS Port -->
+    <Environment name="cso-portal/ldapPort" value="10389" type="java.lang.String" override="false" />
+    <!-- The Size of the ApacheDS Connection Pool -->
+    <Environment name="cso-portal/numConnections" value="10" type="java.lang.String" override="false" />
+    <!-- The WSDL URL Root -->
+<Environment name="cso-portal/wsdlUrlRootPC" value="http://gwprod1pcp1-dr:8180/pc/ws/" type="java.lang.String" override="false" />
+    <!-- The WSDL URL Root -->
+<Environment name="cso-portal/wsdlUrlRootCC" value="http://gwprod1ccp1-dr:8080/cc/ws/" type="java.lang.String" override="false" />
+    <!-- The WSDL URL Root for BC -->
+<Environment name="cso-portal/wsdlUrlRootBC" value="http://gwprod1bcp1-dr:8580/bc/ws/" type="java.lang.String" override="false" />
+    <!-- These look redundant, but they're not. These are used to set the reverse-proxy URL for MGA users -->
+    <!-- The PolicyCenter Url -->
+<Environment name="cso-portal/policyCenterUrl" value="http://gwprod1pcp1-dr:8180/pc" type="java.lang.String" override="false" />
+    <!-- The ClaimCenter Url -->
+<Environment name="cso-portal/claimCenterUrl" value="http://gwprod1ccp1-dr:8080/cc" type="java.lang.String" override="false" />
+    <!-- The BillingCenter Url -->
+<Environment name="cso-portal/billingCenterUrl" value="http://gwprod1bcp1-dr:8580/bc" type="java.lang.String" override="false" />
+    <!-- The main URL for OK.GOV Online Payment-->
+    <Environment name="cso-portal/okGovUrl" value="https://checkout.ok.gov/commoncheckout/" type="java.lang.String" override="false" />
+    <!-- Success, failure, and cancel URLs when payment returns from OK.GOV -->
+    <Environment name="cso-portal/okGovSuccessUrl" value="https://webservices.compsourcemutual.com/PayOnlineSuccess.action" type="java.lang.String" override="false" />
+    <Environment name="cso-portal/okGovFailureUrl" value="https://webservices.compsourcemutual.com/PayOnlineFailure.action" type="java.lang.String" override="false" />
+    <Environment name="cso-portal/okGovCancelUrl" value="https://webservices.compsourcemutual.com/PayOnlineCancel.action" type="java.lang.String" override="false" />
+    
+    <!-- The location of the truststore for OK.Gov SSL certs -->
+    <Environment name="cso-portal/trustStoreLocation" value="/usr/java/jre1.6.0_30/lib/security/cacerts" type="java.lang.String" override="false" />
+	<Environment name="cso-portal/trustStorePassword" value="changeit" type="java.lang.String" override="false" />	
+    <!-- Email properties start here -->
+    <Environment name="cso-portal/smtpHost" value="relay.compsourcemutual.com" type="java.lang.String" override="false" />
+    <Environment name="cso-portal/smtpPort" value="25" type="java.lang.String" override="false" />
+    <Environment name="cso-portal/smtpFrom" value="noreply@compsourcemutual.com" type="java.lang.String" override="false" />
+    <Environment name="cso-portal/smtpSubject" value="Your Password Recovery Request from CompSource" type="java.lang.String" override="false" />
+    <Environment name="cso-portal/smtpToOOS" value="PortalOutOfState@compsourcemutual.com" type="java.lang.String" override="false" />
+    <Environment name="cso-portal/smtpSubjectOOS" value="Out Of State Request" type="java.lang.String" override="false" />
+    <!-- The Number of days until the Password Recovery Link expires -->
+    <Environment name="cso-portal/numPwdLinkExpirDays" value="15" type="java.lang.String" override="false" />
+	
+
+</Context>

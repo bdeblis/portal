@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<xsd:schema
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:gw="http://guidewire.com/xsd"
+      xmlns="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.policy.policymodel"
+      targetNamespace="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.policy.policymodel"
+      elementFormDefault="qualified"
+      xmlns:ns0="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.contact.claimcontactmodel"
+      xmlns:ns1="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.policy.policylocationmodel">
+  <xsd:import
+        namespace="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.contact.claimcontactmodel" schemaLocation="../contact/ClaimContactModel.gx"/>
+  <xsd:import namespace="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.policy.policylocationmodel" schemaLocation="PolicyLocationModel.gx"/>
+  <xsd:element
+        name="Policy" type="Policy" nillable="true"/>
+  <xsd:complexType
+        name="Policy">
+    <xsd:sequence>
+      <xsd:element name="AccountOrgType_Ext" minOccurs="0" nillable="true" type="xsd:string"/>
+      <xsd:element name="AccountTypeOfBusiness_Ext" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+      <xsd:element name="Contacts" minOccurs="0" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Entry" minOccurs="0" maxOccurs="unbounded" nillable="true" type="ns0:ClaimContact"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EffectiveDate" minOccurs="0" nillable="true" type="xsd:dateTime" gw:type="java.util.Date"/>
+      <xsd:element name="ExpirationDate" minOccurs="0" nillable="true" type="xsd:dateTime" gw:type="java.util.Date"/>
+      <xsd:element name="InsuredSICCode" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+      <xsd:element name="Notes" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+      <xsd:element name="PolicyLocations" minOccurs="0" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Entry" minOccurs="0" maxOccurs="unbounded" nillable="true" type="ns1:PolicyLocation"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PolicyNumber" minOccurs="0" nillable="true" type="xsd:string" gw:type="java.lang.String"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

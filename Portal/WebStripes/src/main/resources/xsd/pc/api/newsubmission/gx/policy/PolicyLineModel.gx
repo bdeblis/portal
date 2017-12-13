@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<xsd:schema
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:gw="http://guidewire.com/xsd"
+      xmlns="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.policy.policylinemodel"
+      targetNamespace="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.policy.policylinemodel"
+      elementFormDefault="qualified"
+      xmlns:ns0="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.contact.policycontactrolemodel"
+      xmlns:ns1="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.contact.wc7addlinterest_extmodel"
+      xmlns:ns2="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.policy.policylineanswermodel">
+  <xsd:import
+        namespace="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.contact.policycontactrolemodel" schemaLocation="../contact/PolicyContactRoleModel.gx"/>
+  <xsd:import namespace="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.contact.wc7addlinterest_extmodel" schemaLocation="../contact/WC7Addlinterest_ExtModel.gx"/>
+  <xsd:import namespace="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.policy.policylineanswermodel" schemaLocation="PolicyLineAnswerModel.gx"/>
+  <xsd:element
+        name="PolicyLine" type="PolicyLine" nillable="true"/>
+  <xsd:complexType
+        name="PolicyLine">
+    <xsd:sequence>
+      <xsd:element name="entity-WC7WorkersCompLine" minOccurs="0" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="AdditionalInterests" minOccurs="0" nillable="true">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="Entry" minOccurs="0" maxOccurs="unbounded" nillable="true" type="ns1:WC7AddlInterest_Ext"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ExcludedOwnerOfficers" minOccurs="0" nillable="true">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="Entry" minOccurs="0" maxOccurs="unbounded" nillable="true" type="ns0:PolicyContactRole"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="IncludedOwnerOfficers" minOccurs="0" nillable="true">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="Entry" minOccurs="0" maxOccurs="unbounded" nillable="true" type="ns0:PolicyContactRole"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="LineAnswers" minOccurs="0" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Entry" minOccurs="0" maxOccurs="unbounded" nillable="true" type="ns2:PolicyLineAnswer"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

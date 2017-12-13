@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<xsd:schema
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:gw="http://guidewire.com/xsd"
+      xmlns="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.claim.employmentdatamodel"
+      targetNamespace="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.claim.employmentdatamodel"
+      elementFormDefault="qualified"
+      xmlns:ns0="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.claim.workstatusmodel">
+  <xsd:import
+        namespace="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.claim.workstatusmodel" schemaLocation="WorkStatusModel.gx"/>
+  <xsd:element
+        name="EmploymentData" type="EmploymentData" nillable="true"/>
+  <xsd:complexType
+        name="EmploymentData">
+    <xsd:sequence>
+      <xsd:element name="HireDate" minOccurs="0" nillable="true" type="xsd:dateTime" gw:type="java.util.Date"/>
+      <xsd:element name="HireState" minOccurs="0" nillable="true" type="xsd:string"/>
+      <xsd:element name="InjuryStartTime" minOccurs="0" nillable="true" type="xsd:dateTime" gw:type="java.util.Date"/>
+      <xsd:element name="LastWorkedDate" minOccurs="0" nillable="true" type="xsd:dateTime" gw:type="java.util.Date"/>
+      <xsd:element name="WageAmount" minOccurs="0" nillable="true" type="xsd:string" gw:type="gw.api.financials.CurrencyAmount"/>
+      <xsd:element name="WorkStatusChanges" minOccurs="0" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Entry" minOccurs="0" maxOccurs="unbounded" nillable="true" type="ns0:WorkStatus"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

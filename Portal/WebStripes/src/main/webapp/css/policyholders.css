@@ -1,0 +1,110 @@
+/* submenu */
+
+.content_left_top_bg_sub {
+	background-color:#003970; /* dark color */
+	
+}
+
+#container1 {
+	background-color:#003970; /* dark color */
+	background: url(../img/policyholdersBG.png) repeat-y scroll 0 0 transparent;
+}
+
+ul#am_menu li a, ul#am_menu li a:link, ul#am_menu li a:visited, ul#am_menu li a:active {
+	background-color: #003970; /* dark color */
+}
+
+ul#am_menu li a:hover {
+	background-color: #154c81; /* medium color */
+}
+
+#col1 .nav .nav-selected {
+	background-color: #154c81; /* medium color */
+}
+
+#col1 .nav li .nav-path-selected {
+	background-color: #154c81; /* medium color */
+}
+
+#col1 .nav li li .nav-path-selected {
+	background-color: #255a8d; /* light color */
+}
+
+ul#am_menu li ul{
+	background-color: #255a8d; /* light color */
+}
+
+ul#am_menu li li a, ul#am_menu li li a:link, ul#am_menu li li a:visited, ul#am_menu li li a:active {
+	background-color: #255a8d !important;  /* light color */
+}
+
+ul#am_menu li li a:hover {
+	background-color: #255a8d !important;  /* light color */
+}
+
+#col1 .nav a, ul#am_menu a {
+	border-bottom: 1px solid #295987; /* border color */
+}
+
+ul#am_menu li ul li a:hover {
+	*color: #95acc7;
+}
+
+/* end submenu */
+
+
+.sub {
+	background-color:#e4ecf5; /* body copy color */
+}
+
+.sub ul {
+	list-style: disc;
+}
+
+.sub a, .sub a:link, .sub a:link, .sub a:visited, .sub a:active {
+	color:#003970; /* body link colorr - dark color */
+	text-decoration: underline;
+}
+
+.sub a:hover {
+	color:#003970; /* body link hover color - dark color */
+	text-decoration: none;
+}
+
+
+/* FAQs */
+
+.faqs {
+	border-bottom: 1px solid #b6cde4 !Important;
+	background-color: none;
+}
+
+.faqs:first-child {
+	border-top: 1px solid #b6cde4 !Important;
+}
+
+.faqHover {
+	background-color: #dde7f0;
+}
+
+.faqActive {
+	background-color: #dde7f0;
+}
+
+
+#picoverlay_sub {
+	background-image:url(../img/suboverlay-policy.png);
+}
+
+
+
+/* Web Forms */
+
+.inner .sem-submit, .ccm-input-submit {
+	background: #003970;
+	background: url(../img/submit_button_navy.jpg) no-repeat scroll 0 0 transparent !important;
+}
+
+.combo div.icon {
+  background: url(../img/trigger_policy.png) no-repeat scroll 0 0 transparent;
+}

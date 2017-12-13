@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Generated WSDL for compsource.pc.api.coi.CSNewCOIRequestAPI web service--><wsdl:definitions targetNamespace="http://guidewire.com/compsource/pc/api/coi/CSNewCOIRequestAPI" name="CSNewCOIRequestAPI" xmlns="http://guidewire.com/compsource/pc/api/coi/CSNewCOIRequestAPI" xmlns:gwsoap="http://guidewire.com/ws/soapheaders" xmlns:gwwsdl="http://guidewire.com/pl/wsdl" xmlns:pogo="http://example.com/compsource/pc/api/coi" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://guidewire.com/compsource/pc/api/coi/CSNewCOIRequestAPI" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://guidewire.com/ws/soapheaders" schemaLocation="soapheaders.xsd"/>
+      <xs:import namespace="http://example.com/compsource/pc/api/coi"/>
+      <!--getPolicyTerms(String) : COIPolicyTerm[]-->
+      <xs:element name="getPolicyTerms">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="policyNumber" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPolicyTermsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" minOccurs="0" gw:viewas="array" xmlns:gw="http://guidewire.com/xsd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Entry" nillable="true" type="pogo:COIPolicyTerm"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--createNewCOIRequest(String, String) : boolean-->
+      <xs:element name="createNewCOIRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="policyNumber" type="xs:string" minOccurs="0"/>
+            <xs:element name="requestXML" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="createNewCOIRequestResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SOAPException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="RequiredFieldException">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="XmlException">
+        <xs:complexType/>
+      </xs:element>
+    </xs:schema>
+    <xs:schema targetNamespace="http://example.com/compsource/pc/api/coi" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="COIPolicyTerm">
+        <xs:sequence>
+          <xs:element name="TermDescription" type="xs:string" minOccurs="0"/>
+          <xs:element name="TermNumber" type="xs:int" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:portType name="CSNewCOIRequestAPIPortType">
+    <wsdl:operation name="getPolicyTerms">
+      <wsdl:input name="getPolicyTerms" message="getPolicyTerms"/>
+      <wsdl:output name="getPolicyTermsResponse" message="getPolicyTermsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="createNewCOIRequest">
+      <wsdl:input name="createNewCOIRequest" message="createNewCOIRequest"/>
+      <wsdl:output name="createNewCOIRequestResponse" message="createNewCOIRequestResponse"/>
+      <!--If a communication errors occurs-->
+      <wsdl:fault name="SOAPException" message="SOAPException"/>
+      <!--If a required field is missing from the XML Document encoding the request data-->
+      <wsdl:fault name="RequiredFieldException" message="RequiredFieldException"/>
+      <!--If an error occurs parsings the XML Document encoding the request data-->
+      <wsdl:fault name="XmlException" message="XmlException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CSNewCOIRequestAPISoap12Binding" type="CSNewCOIRequestAPIPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="getPolicyTerms">
+      <soap12:operation style="document"/>
+      <wsdl:input name="getPolicyTerms">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPolicyTermsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createNewCOIRequest">
+      <soap12:operation style="document"/>
+      <wsdl:input name="createNewCOIRequest">
+        <soap12:body use="literal"/>
+        <soap12:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap12:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createNewCOIRequestResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap12:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap12:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap12:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CSNewCOIRequestAPISoap11Binding" type="CSNewCOIRequestAPIPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="getPolicyTerms">
+      <soap11:operation style="document"/>
+      <wsdl:input name="getPolicyTerms">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPolicyTermsResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createNewCOIRequest">
+      <soap11:operation style="document"/>
+      <wsdl:input name="createNewCOIRequest">
+        <soap11:body use="literal"/>
+        <soap11:header message="gw-authentication" part="gw-authentication" use="literal"/>
+        <soap11:header message="gw-locale" part="gw-locale" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createNewCOIRequestResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap11:fault name="SOAPException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequiredFieldException">
+        <soap11:fault name="RequiredFieldException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlException">
+        <soap11:fault name="XmlException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CSNewCOIRequestAPI">
+    <wsdl:port name="CSNewCOIRequestAPISoap12Port" binding="CSNewCOIRequestAPISoap12Binding">
+      <soap12:address location="http://localhost:8180/pc/ws/compsource/pc/api/coi/CSNewCOIRequestAPI"/>
+      <gwwsdl:address location="${pc}/ws/compsource/pc/api/coi/CSNewCOIRequestAPI"/>
+    </wsdl:port>
+    <wsdl:port name="CSNewCOIRequestAPISoap11Port" binding="CSNewCOIRequestAPISoap11Binding">
+      <soap11:address location="http://localhost:8180/pc/ws/compsource/pc/api/coi/CSNewCOIRequestAPI/soap11"/>
+      <gwwsdl:address location="${pc}/ws/compsource/pc/api/coi/CSNewCOIRequestAPI/soap11"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:message name="getPolicyTerms">
+    <wsdl:part name="parameters" element="getPolicyTerms"/>
+  </wsdl:message>
+  <wsdl:message name="getPolicyTermsResponse">
+    <wsdl:part name="parameters" element="getPolicyTermsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="createNewCOIRequest">
+    <wsdl:part name="parameters" element="createNewCOIRequest"/>
+  </wsdl:message>
+  <wsdl:message name="createNewCOIRequestResponse">
+    <wsdl:part name="parameters" element="createNewCOIRequestResponse"/>
+  </wsdl:message>
+  <wsdl:message name="SOAPException">
+    <wsdl:part name="SOAPException" element="SOAPException"/>
+  </wsdl:message>
+  <wsdl:message name="RequiredFieldException">
+    <wsdl:part name="RequiredFieldException" element="RequiredFieldException"/>
+  </wsdl:message>
+  <wsdl:message name="XmlException">
+    <wsdl:part name="XmlException" element="XmlException"/>
+  </wsdl:message>
+  <wsdl:message name="gw-authentication">
+    <wsdl:part name="gw-authentication" element="gwsoap:authentication"/>
+  </wsdl:message>
+  <wsdl:message name="gw-locale">
+    <wsdl:part name="gw-locale" element="gwsoap:locale"/>
+  </wsdl:message>
+</wsdl:definitions>

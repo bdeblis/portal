@@ -1,0 +1,15 @@
+# The admin user
+dn: uid=admin,o=compsourceok,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+uid: admin
+cn: admin
+sn: admin
+description: The admin user for the Portal LDAP
+userpassword: Password1
+
+# The users group
+dn: ou=users,o=compsourceok,dc=com
+objectClass: top
+objectClass: organizationalUnit

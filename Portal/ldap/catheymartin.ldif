@@ -1,0 +1,20 @@
+dn: cn=Cathey Martin,ou=users,o=compsourceok,dc=com
+objectClass: organizationalPerson
+objectClass: csoExtension
+objectClass: person
+objectClass: csoPerson
+objectClass: inetOrgPerson
+objectClass: csoCashier
+objectClass: top
+cn: Cathey Martin
+sn: cashier
+csoChallengeAnswer: cashier
+csoChallengeQuestion: what's your role?
+csoOkGovUserId: null
+givenname: cathey
+homePhone: 555-555-5555
+mail: cathey_m@compsourceok.com
+uid: fscm1
+userPassword:: e1NTSEF9ZGJTMWdnZDhzcFN5RkRRaW1HL0FHNlZna2tHd0YyVkNuVE0vMXc9P
+ Q==
+

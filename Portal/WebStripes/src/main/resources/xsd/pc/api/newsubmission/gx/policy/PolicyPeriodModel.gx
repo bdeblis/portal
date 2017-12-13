@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<xsd:schema
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:gw="http://guidewire.com/xsd"
+      xmlns="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.policy.policyperiodmodel"
+      targetNamespace="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.policy.policyperiodmodel"
+      elementFormDefault="qualified"
+      xmlns:ns0="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.location.policylocationmodel"
+      xmlns:ns1="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.policy.periodanswermodel"
+      xmlns:ns2="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.policy.policylinemodel"
+      xmlns:ns3="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.policy.priorpolicymodel">
+  <xsd:import
+        namespace="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.location.policylocationmodel" schemaLocation="../location/PolicyLocationModel.gx"/>
+  <xsd:import namespace="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.policy.periodanswermodel" schemaLocation="PeriodAnswerModel.gx"/>
+  <xsd:import namespace="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.policy.policylinemodel" schemaLocation="PolicyLineModel.gx"/>
+  <xsd:import namespace="http://guidewire.com/pc/gx/compsource.pc.api.newsubmission.gx.policy.priorpolicymodel" schemaLocation="PriorPolicyModel.gx"/>
+  <xsd:element
+        name="PolicyPeriod" type="PolicyPeriod" nillable="true"/>
+  <xsd:complexType
+        name="PolicyPeriod">
+    <xsd:sequence>
+      <xsd:element name="IsNewFromPortal_Ext" minOccurs="0" nillable="true" type="xsd:boolean" gw:type="java.lang.Boolean"/>
+      <xsd:element name="PeriodAnswers" minOccurs="0" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Entry" minOccurs="0" maxOccurs="unbounded" nillable="true" type="ns1:PeriodAnswer"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Policy" minOccurs="0" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="PriorPolicies" minOccurs="0" nillable="true">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="Entry" minOccurs="0" maxOccurs="unbounded" nillable="true" type="ns3:PriorPolicy"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PolicyLocations" minOccurs="0" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Entry" minOccurs="0" maxOccurs="unbounded" nillable="true" type="ns0:PolicyLocation"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PrimaryNamedInsured" minOccurs="0" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OrgType_Ext" minOccurs="0" nillable="true" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="WC7Line" minOccurs="0" nillable="true" type="ns2:PolicyLine"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

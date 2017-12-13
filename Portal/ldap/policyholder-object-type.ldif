@@ -1,0 +1,15 @@
+dn: m-oid=1.3.6.1.4.1.1234567.5.2.3,ou=objectclasses,cn=compsourceok,ou=schema
+objectclass: metaObjectClass
+objectclass: metaTop
+objectclass: top
+m-description: Policyholder User Information for CompSource
+m-may: csoPolicyNumber
+m-may: csoPhCompanyName
+m-may: csoPcAccountId
+m-may: csoOkGovUserId
+m-must: cn
+m-name: csoPolicyholder
+m-oid: 1.3.6.1.4.1.1234567.5.2.3
+m-supobjectclass: csoPerson
+m-typeobjectclass: AUXILIARY
+

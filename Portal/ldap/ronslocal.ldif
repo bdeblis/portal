@@ -1,0 +1,24 @@
+version: 1
+dn: cn=ron king ron,ou=users,o=compsourceok,dc=com
+objectClass: csoPolicyholder
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: csoPerson
+objectClass: csoExtension
+objectClass: person
+objectClass: top
+cn: ron king ron
+csoChallengeAnswer: williams
+csoChallengeQuestion: moms maiden name
+csoOkGovUserId: null
+csoPcAccountId: 1852268248
+csoPhCompanyName: test company
+csoPolicyNumber: 00000022
+givenname: ron
+homePhone: 555-555-5555
+mail: ron_k@compsourceok.com
+sn: king
+uid: ron
+userPassword:: e1NTSEF9RTdhbGFCU0c1MkhKczNYVnNod3BMUEJTMjl4ZTRoQ2dtTVBWRVE9P
+ Q==
+

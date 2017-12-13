@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<xsd:schema
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:gw="http://guidewire.com/xsd"
+      xmlns="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.incident.incidentmodel"
+      targetNamespace="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.incident.incidentmodel"
+      elementFormDefault="qualified"
+      xmlns:ns0="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.incident.bodilyinjurypointmodel"
+      xmlns:ns1="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.incident.bodypartdetailsmodel">
+  <xsd:import
+        namespace="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.incident.bodilyinjurypointmodel" schemaLocation="BodilyInjuryPointModel.gx"/>
+  <xsd:import namespace="http://guidewire.com/cc/gx/compsource.cc.api.fnoi.gx.incident.bodypartdetailsmodel" schemaLocation="BodyPartDetailsModel.gx"/>
+  <xsd:element
+        name="Incident" type="Incident" nillable="true"/>
+  <xsd:complexType
+        name="Incident">
+    <xsd:sequence>
+      <xsd:element name="entity-InjuryIncident" minOccurs="0" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="BodyParts" minOccurs="0" nillable="true">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="Entry" minOccurs="0" maxOccurs="unbounded" nillable="true" type="ns1:BodyPartDetails"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="DetailedInjuryType" minOccurs="0" nillable="true" type="xsd:string"/>
+            <xsd:element name="GeneralInjuryType" minOccurs="0" nillable="true" type="xsd:string"/>
+            <xsd:element name="InjuryPoints_EXT" minOccurs="0" nillable="true">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="Entry" minOccurs="0" maxOccurs="unbounded" nillable="true" type="ns0:BodilyInjuryPoint_EXT"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Severity" minOccurs="0" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
